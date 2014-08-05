@@ -1,2 +1,4 @@
 public/js/vendor/**
 node_modules/**
+build/public/js/vendor/**
+dist/public/js/vendor/**

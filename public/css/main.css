@@ -15,6 +15,10 @@ This are the mobile styles. It's what people see on their phones. If
 you set a great foundation, you won't need to add too many styles in
 the other stylesheets. Remember, keep it light: Speed is Important.
 */
+body {
+  /* boostrap header 50px + 50px actual padding */
+  padding-top: 100px; }
+
 /*
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's

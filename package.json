@@ -21,6 +21,10 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-jsbeautifier": "^0.2.7",
-    "grunt-sass": "^0.14.0"
+    "grunt-sass": "^0.14.0",
+    "mocha": "^1.21.3",
+    "mocha-csslint": "0.0.4",
+    "mocha-jshint": "0.0.9",
+    "w3cjs": "^0.1.25"
   }
 }

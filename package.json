@@ -1,0 +1,19 @@
+{
+  "name": "Badeseen",
+  "version": "0.0.0",
+  "description": "Qualitaet der Badeseen im Landkreis Giessen",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodeForGiessen/badeseen.git"
+  },
+  "author": "OK Lab Giessen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodeForGiessen/badeseen/issues"
+  },
+  "homepage": "https://github.com/CodeForGiessen/badeseen"
+}

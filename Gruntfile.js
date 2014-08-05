@@ -4,7 +4,7 @@ module.exports = function(grunt) {
         paths: {
             scss: './sass',
             css: './public/css',
-            js: ['*.js', 'public/js/**/*.js', 'test/*.js']
+            js: ['*.js', 'public/js/*.js', 'test/*.js']
         },
 
         jshint: {

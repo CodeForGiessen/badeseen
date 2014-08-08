@@ -19,6 +19,9 @@ body {
   /* boostrap header 50px + 50px actual padding */
   padding-top: 100px; }
 
+.nav-tabs {
+  margin-bottom: 10px; }
+
 /*
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's

@@ -40,8 +40,12 @@
               Hier kann ihre Karte stehen!
             </tab>
 
-            <tab heading="Liste">
-              Hier kann ihre Liste stehen!
+            <tab heading="Liste" ng-controller="SeaListCtrl">
+               <accordion close-others="true">
+                <accordion-group heading="{{sea.name}}" ng-repeat="sea in seaList">
+                  <p>{{ sea.description }}</p>
+                </accordion-group>
+              </accordion>
             </tab>
           </tabset>
 

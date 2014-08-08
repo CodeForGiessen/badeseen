@@ -2,7 +2,7 @@ var myApp = angular.module('myApp', ['ui.bootstrap']);
 
 function TabCtrl($scope) {
 
-}}
+}
 
 /**
  * Return list of seas
@@ -24,3 +24,7 @@ function getListOfSeasWithDescription() {
 		}
 	];
 }
+
+myApp.controller('SeaListCtrl', function($scope, $timeout, $modal, $log) {
+	$scope.seaList = getListOfSeasWithDescription();
+});

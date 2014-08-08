@@ -24,4 +24,4 @@ Wenn alle Tests durchlaufen und der JS-Code beautified ist, kann der Code ins Re
 **Achtung:** `grunt deploy` ruft ebenso den `beautify`-Task auf.
 
 ## Deployment
-Die App kann über `grunt deploy` deployed werden. So wird ein .zip-Archiv erstellt (in `dist/`), ohne die Nodejs-Abhängigkeiten, den SASS-Code, die Tests usw.
+Eine auslieferbare Kopie der App kann über `grunt deploy` generiert werden. So wird ein .zip-Archiv erstellt (in `dist/`), ohne die Nodejs-Abhängigkeiten, den SASS-Code, die Tests usw.

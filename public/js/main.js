@@ -30,6 +30,24 @@ myApp.factory('UserLocationService', function($q) {
 	}
 });
 
-myApp.controller('SeaListCtrl', function($scope, $timeout, $modal, $log) {
-	$scope.seaList = getListOfSeasWithDescription();
+myApp.controller('SeaListCtrl', function($scope, $modal, UserLocationService) {
+	var seaList = getListOfSeasWithDescription();
+
+	var userLocation = UserLocationService.getUserLocation()
+	.then(function success(res) {
+		var seaListWithDistance = seaList.map(function(sea) {
+			// distance calculated by long/lat in meters
+			var distance = geolib.getDistance(res, sea.location);
+
+			return {
+				'name': sea.name,
+				'description' : sea.description,
+				'distance' : distance / 1000
+			}
+		});
+
+		$scope.seaList = seaListWithDistance;
+	}, function error() {
+		$scope.seaList = seaList; // no distance nor locations
+	});
 });

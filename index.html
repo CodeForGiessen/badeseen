@@ -42,7 +42,15 @@
 
             <tab heading="Liste" ng-controller="SeaListCtrl">
                <accordion close-others="true">
-                <accordion-group heading="{{sea.name}}" ng-repeat="sea in seaList">
+                <accordion-group ng-repeat="sea in seaList">
+                  <accordion-heading>
+                  <!--
+                    distance span is hidden when there is no distance. but when there is,
+                    it gets rounded to 2 decimal places
+                  -->
+                  {{ sea.name }} <span ng-show="{{ sea.distance}}">({{ sea.distance | number:2 }}km entfernt)</span>
+                  </accordion-heading>
+
                   <p>{{ sea.description }}</p>
                 </accordion-group>
               </accordion>

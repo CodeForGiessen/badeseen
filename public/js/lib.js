@@ -9,12 +9,20 @@
 function getListOfSeasWithDescription() {
 	return [
 		{
-			'name': 'John Maynard',
-			'description': 'John Maynard! „Wer ist John Maynard?“ „John Maynard war unser Steuermann, aushielt er, bis er das Ufer gewann, er hat uns gerettet, er trägt die Kron’, er starb für uns, unsre Liebe sein Lohn. John Maynard.“'
+			'name': 'Dutenhofener See',
+			'description': 'John Maynard! „Wer ist John Maynard?“ „John Maynard war unser Steuermann, aushielt er, bis er das Ufer gewann, er hat uns gerettet, er trägt die Kron’, er starb für uns, unsre Liebe sein Lohn. John Maynard.“',
+			'location' : {
+				'lat' : 50.567451,
+				'lng' : 8.610631
+			}
 		},
 		{
-			'name': 'Mackie Messer',
-			'description': 'Wo ist Alfons gleich, der Fuhrherr? Kommt das je ans Sonnenlicht? Wer es immer wissen könnte Mackie Messer weiss es nicht.'
+			'name': 'Silbersee',
+			'description': 'Wo ist Alfons gleich, der Fuhrherr? Kommt das je ans Sonnenlicht? Wer es immer wissen könnte Mackie Messer weiss es nicht.',
+			'location' : {
+				'lat' : 50.616055,
+				'lng' : 8.673802
+			}
 		}
 	];
 }

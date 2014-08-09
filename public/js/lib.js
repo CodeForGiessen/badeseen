@@ -19,3 +19,14 @@ function getListOfSeasWithDescription() {
 	];
 }
 
+
+/**
+ * Return location of Gießen city
+ * @return {Object} Location given by latitude and longitude wrapped by a object
+ */
+function getFallbackLocation() {
+	return {
+		'lat' : 50.583732,
+		'lng' : 8.678344
+	}
+}

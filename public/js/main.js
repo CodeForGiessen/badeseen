@@ -15,7 +15,9 @@ myApp.factory('UserLocationService', function($q) {
 					'lng' : pos.coords.longitude
 				});
 			}, function error() {
-				defer.reject();
+				// client forbids (or is not able to) location usage
+				// so a fallback is used
+				defer.resolve(getFallbackLocation());
 			});
 		}
 

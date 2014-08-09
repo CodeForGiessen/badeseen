@@ -34,15 +34,23 @@
       <!-- Example row of columns -->
       <div class="row">
 
-        <div ng-controller="TabCtrl">
+        <div>
           <tabset>
             <tab heading="Karte">
-              Hier kann ihre Karte stehen!
+              <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/foobar123.j5b19dpp/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoiZm9vYmFyMTIzIiwiYSI6ImlEdmY4aHMifQ.9z4iiNYwmoKVIuYWqS4miA'></iframe>
             </tab>
 
             <tab heading="Liste" ng-controller="SeaListCtrl">
                <accordion close-others="true">
-                <accordion-group heading="{{sea.name}}" ng-repeat="sea in seaList">
+                <accordion-group ng-repeat="sea in seaList">
+                  <accordion-heading>
+                  <!--
+                    distance span is hidden when there is no distance. but when there is,
+                    it gets rounded to 2 decimal places
+                  -->
+                  {{ sea.name }} <span ng-show="{{ sea.distance}}">({{ sea.distance | number:2 }}km entfernt)</span>
+                  </accordion-heading>
+
                   <p>{{ sea.description }}</p>
                 </accordion-group>
               </accordion>
@@ -65,7 +73,10 @@
         <script src="public/js/vendor/ui-bootstrap-0.11.0.min.js"></script>
         <!-- bootstrap templates like tabs etc. -->
         <script src="public/js/vendor/ui-bootstrap-tpls-0.11.0.min.js"></script>
+        <!-- geolib library for location based calculations like distance -->
+        <script src="public/js/vendor/geolib.min.js"></script>
 
+        <script src="public/js/lib.js"></script>
         <script src="public/js/main.js"></script>
     </body>
 </html>

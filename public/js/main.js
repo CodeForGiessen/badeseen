@@ -1,30 +1,53 @@
 var myApp = angular.module('myApp', ['ui.bootstrap']);
 
-function TabCtrl($scope) {
 
-}
+myApp.factory('UserLocationService', function($q) {
+	var location;
 
-/**
- * Return list of seas
- *
- * @discussion Each sea object has a unique name and a brief description
- * to display.
- * 
- * @return {Array of Objects} Array of sea objects
- */
-function getListOfSeasWithDescription() {
-	return [
-		{
-			'name': 'John Maynard',
-			'description': 'John Maynard! „Wer ist John Maynard?“ „John Maynard war unser Steuermann, aushielt er, bis er das Ufer gewann, er hat uns gerettet, er trägt die Kron’, er starb für uns, unsre Liebe sein Lohn. John Maynard.“'
-		},
-		{
-			'name': 'Mackie Messer',
-			'description': 'Wo ist Alfons gleich, der Fuhrherr? Kommt das je ans Sonnenlicht? Wer es immer wissen könnte Mackie Messer weiss es nicht.'
+	function getUserLocation() {
+		var defer = $q.defer();
+
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(
+				function success(pos) {
+				defer.resolve({
+					'lat' : pos.coords.latitude,
+					'lng' : pos.coords.longitude
+				});
+			}, function error() {
+				// client forbids (or is not able to) location usage
+				// so a fallback is used
+				defer.resolve(getFallbackLocation());
+			});
 		}
-	];
-}
 
-myApp.controller('SeaListCtrl', function($scope, $timeout, $modal, $log) {
-	$scope.seaList = getListOfSeasWithDescription();
+		return defer.promise;
+	}
+
+	// return service api
+	return {
+		getUserLocation: getUserLocation
+	}
+});
+
+myApp.controller('SeaListCtrl', function($scope, $modal, UserLocationService) {
+	var seaList = getListOfSeasWithDescription();
+
+	var userLocation = UserLocationService.getUserLocation()
+	.then(function success(res) {
+		var seaListWithDistance = seaList.map(function(sea) {
+			// distance calculated by long/lat in meters
+			var distance = geolib.getDistance(res, sea.location);
+
+			return {
+				'name': sea.name,
+				'description' : sea.description,
+				'distance' : distance / 1000
+			}
+		});
+
+		$scope.seaList = seaListWithDistance;
+	}, function error() {
+		$scope.seaList = seaList; // no distance nor locations
+	});
 });

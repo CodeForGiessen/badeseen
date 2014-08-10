@@ -33,6 +33,25 @@ function getListOfSeasWithDescription() {
     }];
 }
 
+/**
+ * [getSeaLocations description]
+ * @return {[type]} [description]
+ */
+function getSeaLocationMarkers() {
+    var ret = {};
+    var seas = getListOfSeasWithDescription();
+
+    for (i = 0; i < seas.length; i++) {
+        var sea = seas[i];
+
+        ret[sea.name.replace(/ /g,'') + 'Marker'] = {
+            'lat' : sea.location.lat,
+            'lng' : sea.location.lng
+        };
+    }
+
+    return ret;
+}
 
 /**
  * Return location of Gießen city

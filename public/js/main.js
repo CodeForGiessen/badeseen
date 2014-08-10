@@ -83,4 +83,5 @@ myApp.controller('MapCtrl', function($scope, leafletData) {
             }
         }
     });
+    $scope.markers = getSeaLocationMarkers();
 });

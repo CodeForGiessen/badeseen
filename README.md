@@ -23,5 +23,12 @@ Wenn alle Tests durchlaufen und der JS-Code beautified ist, kann der Code ins Re
 
 **Achtung:** `grunt deploy` ruft ebenso den `beautify`-Task auf.
 
+#### Font-Awesome
+Wenn an den SASS-Dateien von Font-Awesome etwas angepasst wurde, muss dieses erneut in CSS umgewandelt werden. Das wird durch `grunt sass:fontawesome` erledigt. Dieser Task muss explizit aufgerufen werden und wird **nicht** automatisch ausgeführt.
+
 ## Deployment
 Eine auslieferbare Kopie der App kann über `grunt deploy` generiert werden. So wird ein .zip-Archiv erstellt (in `dist/`), ohne die Nodejs-Abhängigkeiten, den SASS-Code, die Tests usw.
+
+### Deployment als GitHub-Page
+Im Verzeichnis des Quelltextes: `git checkout gh-pages && git merge --no-ff master && git checkout master && git push` um zu deployen.
+**Achtung:** vorher `make test` ausführen und Funktion sicherstellen.

@@ -13,7 +13,10 @@
         <!-- boostrap stylesheets -->
         <link rel="stylesheet" href="public/css/vendor/bootstrap/bootstrap.min.css">
         <link rel="stylesheet" href="public/css/vendor/bootstrap/bootstrap-theme.min.css">
+        <!-- leaflet.js stylesheet -->
         <link rel="stylesheet" href="public/css/vendor/leaflet.css">
+        <!-- font awesome stylesheet -->
+        <link rel="stylesheet" href="public/css/vendor/font-awesome.css">
 
         <link rel="stylesheet" href="public/css/main.css">
 
@@ -48,8 +51,13 @@
                   -->
                   {{ sea.name }} <span ng-show="{{ sea.distance}}">({{ sea.distance | number:2 }}km entfernt)</span>
                   </accordion-heading>
+                  <div class="highlight pull-right" ng-show="{{ sea.attributes }}">
+                    <ul class="seaAttributes">
+                      <li ng-repeat="attr in sea.attributes" ng-bind-html="attr | trustHtml"></li>
+                    </ul>
+                  </div>
 
-                  <p>{{ sea.description }}</p>
+                  <p ng-bind-html="sea.description | trustHtml"></p>
                 </accordion-group>
               </accordion>
             </tab>
@@ -68,7 +76,7 @@
         <div class="col-md-4">
           <h3 class="h3">Mitwirkende</h3>
           <ul>
-            <li><a href="http://andinfinity.de/" title="andinfinity.de">Christian Schulze</a> <small>(<a href="mailto:chris@andinfinity.de">Kontakt</a>)</small></li>
+            <li><a href="http://andinfinity.de/" title="andinfinity.de">Christian Schulze</a> <small><a href="mailto:chris@andinfinity.de"><span class="fa fa-envelope"></span></a></small></li>
           </ul>
         </div>
         <div class="col-md-4">

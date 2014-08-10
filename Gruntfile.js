@@ -73,6 +73,11 @@ module.exports = function(grunt) {
                 files: {
                     '<%= paths.css %>/main.css': '<%= paths.scss %>/main.scss',
                 }
+            },
+            fontawesome: {
+                files: {
+                    '<%= paths.css%>/vendor/font-awesome.css': '<%= paths.scss %>/vendor/font-awesome/font-awesome.scss'
+                }
             }
         },
 

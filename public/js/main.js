@@ -1,8 +1,6 @@
 var myApp = angular.module('myApp', ['ui.bootstrap', 'leaflet-directive']);
 
 myApp.factory('UserLocationService', function($q) {
-    var location;
-
     function getUserLocation() {
         var defer = $q.defer();
 
@@ -29,6 +27,20 @@ myApp.factory('UserLocationService', function($q) {
     };
 });
 
+/**
+ * Filter to use html tags
+ *
+ * @discussion Do not use with user input as it could be unsafe.
+ */
+myApp.filter('trustHtml', function($sce) {
+	return function(data) {
+		return $sce.trustAsHtml(data);
+	};
+});
+
+/**
+ * Controller for the sea list
+ */
 myApp.controller('SeaListCtrl', function($scope, $modal, UserLocationService) {
     var seaList = getListOfSeasWithDescription();
 
@@ -41,6 +53,7 @@ myApp.controller('SeaListCtrl', function($scope, $modal, UserLocationService) {
                 return {
                     'name': sea.name,
                     'description': sea.description,
+                    'attributes' : sea.attributes,
                     'distance': distance / 1000
                 };
             });
@@ -51,6 +64,9 @@ myApp.controller('SeaListCtrl', function($scope, $modal, UserLocationService) {
         });
 });
 
+/**
+ * Controller for the sea map providing a overview
+ */
 myApp.controller('MapCtrl', function($scope, leafletData) {
     angular.extend($scope, {
         giessen: {

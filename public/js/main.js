@@ -1,5 +1,4 @@
-var myApp = angular.module('myApp', ['ui.bootstrap']);
-
+var myApp = angular.module('myApp', ['ui.bootstrap', 'leaflet-directive']);
 
 myApp.factory('UserLocationService', function($q) {
 	var location;
@@ -49,5 +48,23 @@ myApp.controller('SeaListCtrl', function($scope, $modal, UserLocationService) {
 		$scope.seaList = seaListWithDistance;
 	}, function error() {
 		$scope.seaList = seaList; // no distance nor locations
+	});
+});
+
+myApp.controller('MapCtrl', function($scope, leafletData) {
+	angular.extend($scope, {
+		giessen: {
+			lat: 50.583732,
+			lng: 8.678344,
+			zoom: 11
+		},
+		defaults: {
+			tileLayer: "https://{s}.tiles.mapbox.com/v3/foobar123.j5b19dpp/{z}/{x}/{y}.png",
+			tileLayerOptions: {
+		        attribution: '© Mapbox © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                detectRetina: true,
+                reuseTiles: true,
+            }
+		}
 	});
 });

@@ -1,3 +1,7 @@
+html, body { 
+	height:100%
+}
+
 body {
 	/* boostrap header 50px + 50px actual padding */
 	padding-top: 100px;
@@ -5,4 +9,17 @@ body {
 
 .nav-tabs {
 	margin-bottom: 10px;
+}
+
+/*
+	really hacky way to force the map to show. if all the parent elements don’t have a
+	explicit height the map wont show. FIXME
+ */
+.container, .row > div, .ng-isolate-scope, .row, .tab-content, .tab-pane, .map {
+	height: 99%;
+}
+
+.angular-leaflet-map {
+	height: 80%;
+	width: 100%;
 }

@@ -1,8 +1,6 @@
 var myApp = angular.module('myApp', ['ui.bootstrap', 'leaflet-directive']);
 
 myApp.factory('UserLocationService', function($q) {
-    var location;
-
     function getUserLocation() {
         var defer = $q.defer();
 

@@ -52,7 +52,7 @@
                   {{ sea.name }} <span ng-show="{{ sea.distance}}">({{ sea.distance | number:2 }}km entfernt)</span>
                   </accordion-heading>
 
-                  <p>{{ sea.description }}</p>
+                  <p ng-bind-html="sea.description | trustHtml"></p>
                 </accordion-group>
               </accordion>
             </tab>

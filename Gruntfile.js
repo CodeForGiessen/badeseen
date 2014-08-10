@@ -53,7 +53,11 @@ module.exports = function(grunt) {
         },
 
         jshint: {
-            src: '<%= paths.js %>'
+            src: '<%= paths.js %>',
+            options: {
+                "node": true,
+                "predef": ["angular", "navigator"]
+            }
         },
 
         jsbeautifier: {

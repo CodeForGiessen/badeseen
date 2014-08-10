@@ -13,6 +13,7 @@
         <!-- boostrap stylesheets -->
         <link rel="stylesheet" href="public/css/vendor/bootstrap/bootstrap.min.css">
         <link rel="stylesheet" href="public/css/vendor/bootstrap/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="public/css/vendor/leaflet.css">
 
         <link rel="stylesheet" href="public/css/main.css">
 
@@ -37,7 +38,11 @@
         <div>
           <tabset>
             <tab heading="Karte">
-              <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/foobar123.j5b19dpp/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoiZm9vYmFyMTIzIiwiYSI6ImlEdmY4aHMifQ.9z4iiNYwmoKVIuYWqS4miA'></iframe>
+            <div ng-controller="MapCtrl" class="map">
+              <leaflet center="giessen" defaults="defaults">
+              </leaflet>
+            </div>
+              <!--<iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/foobar123.j5b19dpp/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoiZm9vYmFyMTIzIiwiYSI6ImlEdmY4aHMifQ.9z4iiNYwmoKVIuYWqS4miA'></iframe>-->
             </tab>
 
             <tab heading="Liste" ng-controller="SeaListCtrl">
@@ -73,6 +78,10 @@
         <script src="public/js/vendor/ui-bootstrap-0.11.0.min.js"></script>
         <!-- bootstrap templates like tabs etc. -->
         <script src="public/js/vendor/ui-bootstrap-tpls-0.11.0.min.js"></script>
+        <!-- leaflet.js mapping library -->
+        <script src="public/js/vendor/leaflet.js"></script>
+        <!-- angular leaflet directives -->
+        <script src="public/js/vendor/angular-leaflet-directive.min.js"></script>
         <!-- geolib library for location based calculations like distance -->
         <script src="public/js/vendor/geolib.min.js"></script>
 

@@ -18,10 +18,9 @@ the other stylesheets. Remember, keep it light: Speed is Important.
 html, body {
   height: 100%; }
 
-body {
-  /* boostrap header 50px + 50px actual padding */
-  padding-top: 100px; }
-
+/**
+ * Tabs
+ */
 .nav-tabs {
   margin-bottom: 10px; }
 
@@ -29,12 +28,36 @@ body {
 	really hacky way to force the map to show. if all the parent elements don’t have a
 	explicit height the map wont show. FIXME
  */
-.container, .row > div, .ng-isolate-scope, .row, .tab-content, .tab-pane, .map {
-  height: 99%; }
+.container {
+  height: 80%; }
 
+.row > div, .ng-isolate-scope, .row, .tab-content, .tab-pane, .map {
+  height: 100%; }
+
+/**
+ * Map
+ */
 .angular-leaflet-map {
   height: 80%;
   width: 100%; }
+
+/**
+ * Footer
+ */
+footer {
+  background-color: white; }
+  footer .h3 {
+    margin-top: 0; }
+  footer ul {
+    padding-left: 0; }
+    footer ul li {
+      list-style-type: none; }
+  footer > .container {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    padding-bottom: 10px; }
+  footer > div {
+    text-align: center; }
 
 /*
 LARGER MOBILE DEVICES

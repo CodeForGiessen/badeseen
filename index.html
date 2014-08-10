@@ -23,18 +23,11 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Wasserqualität der Badeseen im Umkreis Gießens</a>
-        </div>
-      </div>
-    </div>
-
     <div class="container">
+    <h1>Wasserqualität der Badeseen im Umkreis Gießens</h1>
+    <hr>
       <!-- Example row of columns -->
       <div class="row">
-
         <div>
           <tabset>
             <tab heading="Karte">
@@ -65,13 +58,26 @@
         </div><!-- angular TabCtrl fin -->
 
       </div><!-- .row fin -->
+    </div> <!-- .container fin -->
 
-      <hr>
-
-      <footer>
-        <p>Copyleft</p>
+      <footer class="navbar navbar-fixed-bottom">
+      <div class="container">
+        <div class="col-md-4">
+          <p>Dies ist ein Projekt des OK Lab Gießen. Die Inhalte stehen unter der MIT-Lizenz auf <a href="https://github.com/CodeForGiessen/badeseen" title="Quelltext">GitHub</a> zur Verfügung.</p>
+        </div>
+        <div class="col-md-4">
+          <h3 class="h3">Mitwirkende</h3>
+          <ul>
+            <li><a href="http://andinfinity.de/" title="andinfinity.de">Christian Schulze</a> <small>(<a href="mailto:chris@andinfinity.de">Kontakt</a>)</small></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <a href="http://codefor.de/giessen/" title="Code for Gießen">
+            <img src="public/img/cfgi-black.svg" alt="" width="200px">
+          </a>
+        </div>
+        </div><!-- .container fin -->
       </footer>
-    </div> <!-- /container -->
         <!-- angular.js -->
         <script src="public/js/vendor/angular.min.js"></script>
         <!-- bootstrap angular directives -->

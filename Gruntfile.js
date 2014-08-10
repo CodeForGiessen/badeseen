@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 
         clean: {
             pre: ['dist/', 'build/'],
-            post: ['<%= archive_name %>.zip']
+            post: ['<%= archiveName %>.zip']
         },
 
         compress: {
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
             archive: {
                 files: [{
                     expand: true,
-                    src: ['<%= archive_name %>.zip'],
+                    src: ['<%= archiveName %>.zip'],
                     dest: 'dist/'
                 }]
             }

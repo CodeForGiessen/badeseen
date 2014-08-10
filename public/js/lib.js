@@ -13,14 +13,23 @@ function getListOfSeasWithDescription() {
         'location': {
             'lat': 50.567451,
             'lng': 8.610631
-        }
+        },
+        'attributes' : [
+            '<span class="fa-stack fa-lg" title="nicht mit dem Auto erreichbar"><i class="fa fa-car fa-stack-1x"></i><i class="fa fa-ban fa-stack-2x text-danger"></i></span>',
+            '<span class="fa-stack fa-lg" title="nicht für Kinder geeignet"><i class="fa fa-child fa-stack-1x"></i><i class="fa fa-ban fa-stack-2x text-danger"></i></span>'
+        ]
     }, {
         'name': 'Silbersee',
         'description': 'Wo ist Alfons gleich, der Fuhrherr?<br>Kommt das je ans Sonnenlicht?<br>Wer es immer wissen könnte<br>Mackie Messer weiss es nicht.',
         'location': {
             'lat': 50.616055,
             'lng': 8.673802
-        }
+        },
+        'attributes' : [
+            '<span class="fa fa-eur fa-2x fa-fw" title="kostet Eintritt"></span>',
+            '<span class="fa fa-life-ring fa-2x fa-fw" title="überwacht"></span>',
+            '<span class="fa fa-child fa-2x fa-fw" title="für Kinder geeignet"></span>'
+        ]
     }];
 }
 

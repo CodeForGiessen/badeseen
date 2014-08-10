@@ -53,6 +53,7 @@ myApp.controller('SeaListCtrl', function($scope, $modal, UserLocationService) {
                 return {
                     'name': sea.name,
                     'description': sea.description,
+                    'attributes' : sea.attributes,
                     'distance': distance / 1000
                 };
             });

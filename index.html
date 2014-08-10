@@ -51,6 +51,11 @@
                   -->
                   {{ sea.name }} <span ng-show="{{ sea.distance}}">({{ sea.distance | number:2 }}km entfernt)</span>
                   </accordion-heading>
+                  <div class="highlight pull-right" ng-show="{{ sea.attributes }}">
+                    <ul class="seaAttributes">
+                      <li ng-repeat="attr in sea.attributes" ng-bind-html="attr | trustHtml"></li>
+                    </ul>
+                  </div>
 
                   <p ng-bind-html="sea.description | trustHtml"></p>
                 </accordion-group>

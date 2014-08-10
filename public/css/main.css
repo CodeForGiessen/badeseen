@@ -19,6 +19,16 @@ html, body {
   height: 100%; }
 
 /**
+ * General
+ */
+.highlight {
+  padding: 9px 14px;
+  margin-bottom: 14px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px; }
+
+/**
  * Tabs
  */
 .nav-tabs {
@@ -33,6 +43,16 @@ html, body {
 
 .row > div, .ng-isolate-scope, .row, .tab-content, .tab-pane, .map {
   height: 100%; }
+
+/**
+ * List
+ */
+.seaAttributes {
+  margin-bottom: 0;
+  padding-left: 0; }
+  .seaAttributes li {
+    list-style-type: none;
+    display: inline-block; }
 
 /**
  * Map

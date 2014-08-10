@@ -27,6 +27,17 @@ myApp.factory('UserLocationService', function($q) {
     };
 });
 
+/**
+ * Filter to use html tags
+ *
+ * @discussion Do not use with user input as it could be unsafe.
+ */
+myApp.filter('trustHtml', function($sce) {
+	return function(data) {
+		return $sce.trustAsHtml(data);
+	};
+});
+
 myApp.controller('SeaListCtrl', function($scope, $modal, UserLocationService) {
     var seaList = getListOfSeasWithDescription();
 

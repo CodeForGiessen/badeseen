@@ -55,8 +55,7 @@ module.exports = function(grunt) {
         jshint: {
             src: '<%= paths.js %>',
             options: {
-                "node": true,
-                "predef": ["angular", "navigator"]
+                jshintrc: '.jshintrc' // relative to Gruntfile
             }
         },
 

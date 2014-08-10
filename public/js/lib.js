@@ -11,8 +11,8 @@ function getListOfSeasWithDescription() {
         'name': 'Dutenhofener See',
         'description': '<em>John Maynard!</em><br>„Wer ist John Maynard?“<br>„John Maynard war unser Steuermann,<br>aushielt er, bis er das Ufer gewann,<br>er hat uns gerettet, er trägt die Kron’,<br>er starb für uns, unsre Liebe sein Lohn.<br>John Maynard.“',
         'location': {
-            'lat': 50.567451,
-            'lng': 8.610631
+            'lat': 50.566840,
+            'lng': 8.610034
         },
         'attributes': [
             '<span class="fa-stack fa-lg" title="nicht mit dem Auto erreichbar"><i class="fa fa-car fa-stack-1x"></i><i class="fa fa-ban fa-stack-2x text-danger"></i></span>',
@@ -22,8 +22,8 @@ function getListOfSeasWithDescription() {
         'name': 'Silbersee',
         'description': 'Wo ist Alfons gleich, der Fuhrherr?<br>Kommt das je ans Sonnenlicht?<br>Wer es immer wissen könnte<br>Mackie Messer weiss es nicht.',
         'location': {
-            'lat': 50.616055,
-            'lng': 8.673802
+            'lat': 50.617841,
+            'lng': 8.673892
         },
         'attributes': [
             '<span class="fa fa-eur fa-2x fa-fw" title="kostet Eintritt"></span>',

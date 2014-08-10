@@ -38,6 +38,9 @@ myApp.filter('trustHtml', function($sce) {
 	};
 });
 
+/**
+ * Controller for the sea list
+ */
 myApp.controller('SeaListCtrl', function($scope, $modal, UserLocationService) {
     var seaList = getListOfSeasWithDescription();
 

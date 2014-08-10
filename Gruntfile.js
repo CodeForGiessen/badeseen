@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(grunt) {
 
     grunt.initConfig({
@@ -8,7 +10,7 @@ module.exports = function(grunt) {
         },
         buildType: 'Build',
         pkg: grunt.file.readJSON('package.json'),
-        archive_name: grunt.option('name') || 'badeseen',
+        archiveName: grunt.option('name') || 'badeseen',
 
         clean: {
             pre: ['dist/', 'build/'],
@@ -18,7 +20,7 @@ module.exports = function(grunt) {
         compress: {
             main: {
                 options: {
-                    archive: '<%= archive_name %>.zip'
+                    archive: '<%= archiveName %>.zip'
                 },
                 expand: true,
                 cwd: 'build/',

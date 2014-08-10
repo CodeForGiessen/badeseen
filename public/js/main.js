@@ -60,6 +60,9 @@ myApp.controller('SeaListCtrl', function($scope, $modal, UserLocationService) {
         });
 });
 
+/**
+ * Controller for the sea map providing a overview
+ */
 myApp.controller('MapCtrl', function($scope, leafletData) {
     angular.extend($scope, {
         giessen: {

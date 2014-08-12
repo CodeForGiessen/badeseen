@@ -44,24 +44,24 @@
                         </div>
                     </tab>
 
-                    <tab heading="Liste" ng-controller="SeaListCtrl">
+                    <tab heading="Liste" ng-controller="LakeListCtrl">
                         <accordion close-others="true">
-                            <accordion-group ng-repeat="sea in seaList">
+                            <accordion-group ng-repeat="lake in lakeList">
                                 <accordion-heading>
                                     <!--
                     distance span is hidden when there is no distance. but when there is,
                     it gets rounded to 2 decimal places
                   -->
-                                    {{ sea.name }}
-                                    <span ng-show="{{ sea.distance}}">({{ sea.distance | number:2 }}km entfernt)</span>
+                                    {{ lake.name }}
+                                    <span ng-show="{{ lake.distance}}">({{ lake.distance | number:2 }}km entfernt)</span>
                                 </accordion-heading>
-                                <div class="highlight pull-right" ng-show="{{ sea.attributes }}">
-                                    <ul class="seaAttributes">
-                                        <li ng-repeat="attr in sea.attributes" ng-bind-html="attr | trustHtml"></li>
+                                <div class="highlight pull-right" ng-show="{{ lake.attributes }}">
+                                    <ul class="lakeAttributes">
+                                        <li ng-repeat="attr in lake.attributes" ng-bind-html="attr | trustHtml"></li>
                                     </ul>
                                 </div>
 
-                                <p ng-bind-html="sea.description | trustHtml"></p>
+                                <p ng-bind-html="lake.description | trustHtml"></p>
                             </accordion-group>
                         </accordion>
                     </tab>

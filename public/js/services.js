@@ -78,16 +78,16 @@ angular.module('myApp.services', [])
             distanceTo: distanceTo
         };
     })
-    .factory('SeaDataProviderService', function() {
+    .factory('LakeDataProviderService', function() {
         /**
-         * Return list of seas
+         * Return list of lakes
          *
-         * @discussion Each sea object has a unique name and a brief description
+         * @discussion Each lake object has a unique name and a brief description
          * to display.
          *
-         * @return {Array of Objects} Array of sea objects
+         * @return {Array of Objects} Array of lake objects
          */
-        function getListOfSeasWithDescription() {
+        function getListOfLakesWithDescription() {
             return [{
                 'name': 'Dutenhofener See',
                 'description': '<em>John Maynard!</em><br>„Wer ist John Maynard?“<br>„John Maynard war unser Steuermann,<br>aushielt er, bis er das Ufer gewann,<br>er hat uns gerettet, er trägt die Kron’,<br>er starb für uns, unsre Liebe sein Lohn.<br>John Maynard.“',
@@ -116,19 +116,19 @@ angular.module('myApp.services', [])
 
         /**
          * Get location objects to populate map markers
-         * @return {Object} Latitude and longitude of seas (approx.)
+         * @return {Object} Latitude and longitude of lakes (approx.)
          */
-        function getSeaLocationMarkers() {
+        function getLakeLocationMarkers() {
             var ret = {};
-            var seas = getListOfSeasWithDescription();
+            var lakes = getListOfLakesWithDescription();
             var i;
 
-            for (i = 0; i < seas.length; i++) {
-                var sea = seas[i];
+            for (i = 0; i < lakes.length; i++) {
+                var lake = lakes[i];
 
-                ret[sea.name.replace(/ /g, '') + 'Marker'] = {
-                    'lat': sea.location.lat,
-                    'lng': sea.location.lng
+                ret[lake.name.replace(/ /g, '') + 'Marker'] = {
+                    'lat': lake.location.lat,
+                    'lng': lake.location.lng
                 };
             }
 
@@ -137,7 +137,7 @@ angular.module('myApp.services', [])
 
         // return service api
         return {
-            getListOfSeasWithDescription: getListOfSeasWithDescription,
-            getSeaLocationMarkers: getSeaLocationMarkers
+            getListOfLakesWithDescription: getListOfLakesWithDescription,
+            getLakeLocationMarkers: getLakeLocationMarkers
         };
     });

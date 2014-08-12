@@ -47,10 +47,10 @@ html, body {
 /**
  * List
  */
-.seaAttributes {
+.lakeAttributes {
   margin-bottom: 0;
   padding-left: 0; }
-  .seaAttributes li {
+  .lakeAttributes li {
     list-style-type: none;
     display: inline-block; }
 

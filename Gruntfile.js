@@ -6,7 +6,8 @@ module.exports = function(grunt) {
         paths: {
             scss: './sass',
             css: './public/css',
-            js: ['*.js', 'public/js/*.js', 'test/*.js']
+            js: ['*.js', 'public/js/*.js', 'test/*.js'],
+            beautify: ['*.js', 'public/js/*.js', 'test/*.js', 'index.html']
         },
         buildType: 'Build',
         pkg: grunt.file.readJSON('package.json'),
@@ -62,11 +63,42 @@ module.exports = function(grunt) {
         },
 
         jsbeautifier: {
+            options: {
+                html: {
+                    braceStyle: 'collapse',
+                    indentChar: ' ',
+                    indentScripts: 'keep',
+                    indentSize: 4,
+                    maxPreserveNewlines: 10,
+                    preserveNewlines: true,
+                    unformatted: ['a', 'sub', 'sup', 'b', 'i', 'u'],
+                    wrapLineLength: 0
+                },
+                js: {
+                    braceStyle: 'collapse',
+                    breakChainedMethods: false,
+                    e4x: false,
+                    evalCode: false,
+                    indentChar: ' ',
+                    indentLevel: 0,
+                    indentSize: 4,
+                    indentWithTabs: false,
+                    jslintHappy: false,
+                    keepArrayIndentation: false,
+                    keepFunctionIndentation: false,
+                    maxPreserveNewlines: 10,
+                    preserveNewlines: true,
+                    spaceBeforeConditional: true,
+                    spaceInParen: false,
+                    unescapeStrings: false,
+                    wrapLineLength: 0
+                }
+            },
             beautify: {
-                src: '<%= paths.js %>'
+                src: '<%= paths.beautify %>'
             },
             check: {
-                src: '<%= paths.js %>',
+                src: '<%= paths.beautify %>',
                 options: {
                     mode: 'VERIFY_ONLY'
                 }

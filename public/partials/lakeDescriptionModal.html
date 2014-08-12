@@ -1,0 +1,13 @@
+<div class="modal-header" ng-show="data.name">
+    <h3 class="modal-title">
+        {{ data.name }}
+    </h3>
+</div>
+<div class="modal-body">
+    <p ng-bind-html="data.description | trustHtml"></p>
+</div>
+<div class="modal-footer" ng-show="data.attributes">
+    <ul class="lakeAttributes">
+        <li ng-repeat="attr in data.attributes" ng-bind-html="attr | trustHtml"></li>
+    </ul>
+</div>

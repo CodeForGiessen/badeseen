@@ -58,4 +58,8 @@ angular.module('myApp.controllers', [])
                 });
             });
         }
+    .controller('ModalInstanceCtrl', ['$scope', 'data',
+        function($scope, data) {
+            $scope.data = data;
+        }
     ]);

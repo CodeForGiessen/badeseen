@@ -26,6 +26,7 @@ angular.module('myApp.services', [])
              * couldn’t be obtained a fallback location will be returned.
              *
              * @see `MapCtrl` controller or angular
+             * @see https://docs.angularjs.org/api/ng/service/$q
              * 
              * @return {Object} Angular.js promise object
              */

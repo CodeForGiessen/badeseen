@@ -30,8 +30,8 @@ angular.module('myApp.controllers', [])
                 });
         }
     ])
-    .controller('MapCtrl', ['$scope', 'leafletData', 'LakeDataProviderService',
-        function($scope, leafletData, LakeDataProviderService) {
+    .controller('MapCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'LakeDataProviderService',
+        function($scope, $modal, leafletData, leafletEvents, LakeDataProviderService) {
             /* Controller for the lake map providing an overview */
             angular.extend($scope, {
                 giessen: {
@@ -50,5 +50,12 @@ angular.module('myApp.controllers', [])
             });
 
             $scope.markers = LakeDataProviderService.getLakeLocationMarkers();
+
+            $scope.$on('leafletDirectiveMarker.click', function(event, leafletEvent) {
+                var marker = $scope.markers[leafletEvent.markerName];
+                $modal.open({
+                    'template': '<div class="modal-header"><h3 class="modal-title">' + marker.data.name + '</h3></div><div class="modal-body"><p>' + marker.data.description + '</p></div>'
+                });
+            });
         }
     ]);

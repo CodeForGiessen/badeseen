@@ -32,3 +32,6 @@ Eine auslieferbare Kopie der App kann über `grunt deploy` generiert werden. So 
 ### Deployment als GitHub-Page
 Im Verzeichnis des Quelltextes: `git checkout gh-pages && git merge --no-ff master && git checkout master && git push` um zu deployen. Nicht zur staging area hinzugefügte Änderungen müssen vorher gestasht werden!
 **Achtung:** vorher `make test` ausführen und Funktion sicherstellen.
+
+## Redeployment
+Um das Projekt an andere OK Labs anzupassen müssen lediglich die Variablen in `public/js/values.js` angepasst werden. Der Footer passt sich automatisch den gegebenen Informationen bzgl. der Grid-Größe an.

@@ -7,5 +7,6 @@ angular.module('myApp', [
     'leaflet-directive',
     'myApp.filters',
     'myApp.services',
-    'myApp.controllers'
+    'myApp.controllers',
+    'myApp.values'
 ]);

@@ -26,12 +26,12 @@
     <script src="public/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 
-<body ng-app="myApp">
+<body ng-app="myApp" ng-controller="MainCtrl">
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <div class="container">
-        <h1>Wasserqualität der Badeseen im Umkreis Gießens</h1>
+        <h1>{{ title }}</h1>
         <hr>
         <!-- Example row of columns -->
         <div class="row">
@@ -60,24 +60,34 @@
 
     <footer class="navbar navbar-fixed-bottom">
         <div class="container">
-            <div class="col-md-4">
-                <p>Dies ist ein Projekt des OK Lab Gießen. Die Inhalte stehen unter der MIT-Lizenz auf <a href="https://github.com/CodeForGiessen/badeseen" title="Quelltext">GitHub</a> zur Verfügung.</p>
+            <div class="col-md-{{ footerColumns }}" ng-show="footNotice">
+                <p ng-bind-html="footNotice | trustHtml"></p>
             </div>
-            <div class="col-md-4">
+
+            <div class="col-md-{{ footerColumns }}" ng-show="contributors">
                 <h3 class="h3">Mitwirkende</h3>
                 <ul>
-                    <li><a href="http://andinfinity.de/" title="andinfinity.de">Christian Schulze</a> 
-                        <small>
-                            <a href="mailto:chris@andinfinity.de">
+                    <li ng-repeat="contributor in contributors">
+                        <!-- website is given. thus the contributor will get a link to her/his website -->
+                        <a ng-show="contributor.website" href="{{ contributor.website }}" title="{{ contributor.website | prettifyWebsiteLink }}">
+                            {{ contributor.name }}
+                        </a>
+
+                        <!-- no website given, plain name is shown -->
+                        <span ng-hide="contributor.website">{{ contributor.name }}</span>
+
+                        <small ng-show="contributor.mail">
+                            <a href="mailto:{{ contributor.mail }}">
                                 <span class="fa fa-envelope"></span>
                             </a>
                         </small>
                     </li>
                 </ul>
             </div>
-            <div class="col-md-4">
-                <a href="http://codefor.de/giessen/" title="Code for Gießen">
-                    <img src="public/img/cfgi-black.svg" alt="" width="200px">
+
+            <div class="col-md-{{ footerColumns }}" ng-show="labInfo.logoPath">
+                <a href="{{ labInfo.website }}" title="{{ labInfo.name }}">
+                    <img ng-src="{{ labInfo.logoPath }}" alt="" width="200px">
                     <!-- 0111010001101000011001010010000001100011011000010110101101100101001000000110100101110011001000000110000100100000011011000110100101100101 -->
                 </a>
             </div>
@@ -101,6 +111,7 @@
     <script src="public/js/filters.js"></script>
     <script src="public/js/controllers.js"></script>
     <script src="public/js/services.js"></script>
+    <script src="public/js/values.js"></script>
 </body>
 
 </html>

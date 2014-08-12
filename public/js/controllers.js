@@ -64,6 +64,32 @@ angular.module('myApp.controllers', [])
                 });
             });
         }
+    ])
+    .controller('MainCtrl', ['$scope', '$window', 'appTitle', 'footNotice', 'contributors', 'labInfo',
+        function($scope, $window, appTitle, footNotice, contributors, labInfo) {
+            var footCols = 0;
+            $window.document.title = appTitle; // set page title
+
+            $scope.title = appTitle; // sets h1
+
+            // build footer and increment column count for bootstrap grid cols
+            $scope.footNotice = footNotice;
+            footCols++;
+
+            $scope.contributors = contributors;
+            footCols++;
+
+            // logo and link with title
+            $scope.labInfo = labInfo;
+            footCols++;
+
+            if (footCols > 0) {
+                $scope.footerColumns = (12 / footCols); // FIXME: what about 5, 7 and so on?
+            } else {
+                $scope.footerCloumns = 1;
+            }
+        }
+    ])
     .controller('ModalInstanceCtrl', ['$scope', 'data',
         function($scope, data) {
             $scope.data = data;

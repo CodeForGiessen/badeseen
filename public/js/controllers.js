@@ -52,9 +52,15 @@ angular.module('myApp.controllers', [])
             $scope.markers = LakeDataProviderService.getLakeLocationMarkers();
 
             $scope.$on('leafletDirectiveMarker.click', function(event, leafletEvent) {
-                var marker = $scope.markers[leafletEvent.markerName];
-                $modal.open({
-                    'template': '<div class="modal-header"><h3 class="modal-title">' + marker.data.name + '</h3></div><div class="modal-body"><p>' + marker.data.description + '</p></div>'
+                /* jshint unused:false */
+                var modalInstance = $modal.open({
+                    controller: 'ModalInstanceCtrl',
+                    templateUrl: 'public/partials/lakeDescriptionModal.html',
+                    resolve: {
+                        data: function() {
+                            return $scope.markers[leafletEvent.markerName].data;
+                        }
+                    }
                 });
             });
         }

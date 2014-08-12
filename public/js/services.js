@@ -121,9 +121,8 @@ angular.module('myApp.services', [])
         function getLakeLocationMarkers() {
             var ret = {};
             var lakes = getListOfLakesWithDescription();
-            var i;
 
-            for (i = 0; i < lakes.length; i++) {
+            for (var i = 0; i < lakes.length; i++) {
                 var lake = lakes[i];
 
                 ret[lake.name.replace(/ /g, '') + 'Marker'] = {

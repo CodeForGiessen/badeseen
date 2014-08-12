@@ -6,7 +6,8 @@ angular.module('myApp.services', [])
         function($q) {
             /**
              * Return location of Gießen city
-             * @return {Object} Location given by latitude and longitude wrapped by a object
+             * @return {Object} Location given by latitude and longitude wrapped
+             * by an object
              */
             function getFallbackLocation() {
                 return {
@@ -15,6 +16,19 @@ angular.module('myApp.services', [])
                 };
             }
 
+            /**
+             * Get user location by querying navigator.geolocation
+             *
+             * @discussion Given the asynchronic nature of geolocation
+             * this function returns a promise object to use like 
+             * `getUserLocation().then(doSmth(result));` with result holding
+             * the obtained location. If the user location
+             * couldn’t be obtained a fallback location will be returned.
+             *
+             * @see `MapCtrl` controller or angular
+             * 
+             * @return {Object} Angular.js promise object
+             */
             function getUserLocation() {
                 var defer = $q.defer();
 
@@ -43,10 +57,22 @@ angular.module('myApp.services', [])
         }
     ])
     .factory('LatLngDistanceService', function() {
+        /**
+         * Return distance in meters between 2 points
+         *
+         * @discussion the points should at least have the 2
+         * attributes `lat` giving the latitude and `lng` giving the
+         * longitude of the point.
+         * 
+         * @param  {[type]} point1 first point
+         * @param  {[type]} point2 second point
+         * @return {[type]}        distance in meters
+         */
         function distanceTo(point1, point2) {
             return geolib.getDistance(point1, point2);
         }
 
+        // return service api
         return {
             distanceTo: distanceTo
         };
@@ -89,7 +115,7 @@ angular.module('myApp.services', [])
 
         /**
          * Get location objects to populate map markers
-         * @return {Object} Latitude and longitude of sea (approx.)
+         * @return {Object} Latitude and longitude of seas (approx.)
          */
         function getSeaLocationMarkers() {
             var ret = {};
@@ -108,6 +134,7 @@ angular.module('myApp.services', [])
             return ret;
         }
 
+        // return service api
         return {
             getListOfSeasWithDescription: getListOfSeasWithDescription,
             getSeaLocationMarkers: getSeaLocationMarkers

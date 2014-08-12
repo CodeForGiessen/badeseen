@@ -2,107 +2,122 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
-        <!-- boostrap stylesheets -->
-        <link rel="stylesheet" href="public/css/vendor/bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" href="public/css/vendor/bootstrap/bootstrap-theme.min.css">
-        <!-- leaflet.js stylesheet -->
-        <link rel="stylesheet" href="public/css/vendor/leaflet.css">
-        <!-- font awesome stylesheet -->
-        <link rel="stylesheet" href="public/css/vendor/font-awesome.css">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="public/css/main.css">
+    <!-- boostrap stylesheets -->
+    <link rel="stylesheet" href="public/css/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/vendor/bootstrap/bootstrap-theme.min.css">
+    <!-- leaflet.js stylesheet -->
+    <link rel="stylesheet" href="public/css/vendor/leaflet.css">
+    <!-- font awesome stylesheet -->
+    <link rel="stylesheet" href="public/css/vendor/font-awesome.css">
 
-        <script src="public/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    </head>
-    <body ng-app="myApp">
-        <!--[if lt IE 7]>
+    <link rel="stylesheet" href="public/css/main.css">
+
+    <script src="public/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <div class="container">
-    <h1>Wasserqualität der Badeseen im Umkreis Gießens</h1>
-    <hr>
-      <!-- Example row of columns -->
-      <div class="row">
-        <div>
-          <tabset>
-            <tab heading="Karte">
-            <div ng-controller="MapCtrl" class="map">
-              <leaflet center="giessen" defaults="defaults" markers="markers">
-              </leaflet>
-            </div>
-              <!--<iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/foobar123.j5b19dpp/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoiZm9vYmFyMTIzIiwiYSI6ImlEdmY4aHMifQ.9z4iiNYwmoKVIuYWqS4miA'></iframe>-->
-            </tab>
+        <h1>Wasserqualität der Badeseen im Umkreis Gießens</h1>
+        <hr>
+        <!-- Example row of columns -->
+        <div class="row">
+            <div>
+                <tabset>
+                    <tab heading="Karte">
+                        <div ng-controller="MapCtrl" class="map">
+                            <leaflet center="giessen" defaults="defaults" markers="markers">
+                            </leaflet>
+                        </div>
+                    </tab>
 
-            <tab heading="Liste" ng-controller="SeaListCtrl">
-               <accordion close-others="true">
-                <accordion-group ng-repeat="sea in seaList">
-                  <accordion-heading>
-                  <!--
+                    <tab heading="Liste" ng-controller="SeaListCtrl">
+                        <accordion close-others="true">
+                            <accordion-group ng-repeat="sea in seaList">
+                                <accordion-heading>
+                                    <!--
                     distance span is hidden when there is no distance. but when there is,
                     it gets rounded to 2 decimal places
                   -->
-                  {{ sea.name }} <span ng-show="{{ sea.distance}}">({{ sea.distance | number:2 }}km entfernt)</span>
-                  </accordion-heading>
-                  <div class="highlight pull-right" ng-show="{{ sea.attributes }}">
-                    <ul class="seaAttributes">
-                      <li ng-repeat="attr in sea.attributes" ng-bind-html="attr | trustHtml"></li>
-                    </ul>
-                  </div>
+                                    {{ sea.name }}
+                                    <span ng-show="{{ sea.distance}}">({{ sea.distance | number:2 }}km entfernt)</span>
+                                </accordion-heading>
+                                <div class="highlight pull-right" ng-show="{{ sea.attributes }}">
+                                    <ul class="seaAttributes">
+                                        <li ng-repeat="attr in sea.attributes" ng-bind-html="attr | trustHtml"></li>
+                                    </ul>
+                                </div>
 
-                  <p ng-bind-html="sea.description | trustHtml"></p>
-                </accordion-group>
-              </accordion>
-            </tab>
-          </tabset>
+                                <p ng-bind-html="sea.description | trustHtml"></p>
+                            </accordion-group>
+                        </accordion>
+                    </tab>
+                </tabset>
 
-        </div><!-- angular TabCtrl fin -->
+            </div>
+            <!-- angular TabCtrl fin -->
 
-      </div><!-- .row fin -->
-    </div> <!-- .container fin -->
-
-      <footer class="navbar navbar-fixed-bottom">
-      <div class="container">
-        <div class="col-md-4">
-          <p>Dies ist ein Projekt des OK Lab Gießen. Die Inhalte stehen unter der MIT-Lizenz auf <a href="https://github.com/CodeForGiessen/badeseen" title="Quelltext">GitHub</a> zur Verfügung.</p>
         </div>
-        <div class="col-md-4">
-          <h3 class="h3">Mitwirkende</h3>
-          <ul>
-            <li><a href="http://andinfinity.de/" title="andinfinity.de">Christian Schulze</a> <small><a href="mailto:chris@andinfinity.de"><span class="fa fa-envelope"></span></a></small></li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <a href="http://codefor.de/giessen/" title="Code for Gießen">
-            <img src="public/img/cfgi-black.svg" alt="" width="200px">
-            <!-- 0111010001101000011001010010000001100011011000010110101101100101001000000110100101110011001000000110000100100000011011000110100101100101 -->
-          </a>
-        </div>
-        </div><!-- .container fin -->
-      </footer>
-        <!-- angular.js -->
-        <script src="public/js/vendor/angular.min.js"></script>
-        <!-- bootstrap angular directives -->
-        <script src="public/js/vendor/ui-bootstrap-0.11.0.min.js"></script>
-        <!-- bootstrap templates like tabs etc. -->
-        <script src="public/js/vendor/ui-bootstrap-tpls-0.11.0.min.js"></script>
-        <!-- leaflet.js mapping library -->
-        <script src="public/js/vendor/leaflet.js"></script>
-        <!-- angular leaflet directives -->
-        <script src="public/js/vendor/angular-leaflet-directive.min.js"></script>
-        <!-- geolib library for location based calculations like distance -->
-        <script src="public/js/vendor/geolib.min.js"></script>
+        <!-- .row fin -->
+    </div>
+    <!-- .container fin -->
 
-        <script src="public/js/app.js"></script>
-        <script src="public/js/filters.js"></script>
-        <script src="public/js/controllers.js"></script>
-        <script src="public/js/services.js"></script>
-    </body>
+    <footer class="navbar navbar-fixed-bottom">
+        <div class="container">
+            <div class="col-md-4">
+                <p>Dies ist ein Projekt des OK Lab Gießen. Die Inhalte stehen unter der MIT-Lizenz auf <a href="https://github.com/CodeForGiessen/badeseen" title="Quelltext">GitHub</a> zur Verfügung.</p>
+            </div>
+            <div class="col-md-4">
+                <h3 class="h3">Mitwirkende</h3>
+                <ul>
+                    <li><a href="http://andinfinity.de/" title="andinfinity.de">Christian Schulze</a> 
+                        <small>
+                            <a href="mailto:chris@andinfinity.de">
+                                <span class="fa fa-envelope"></span>
+                            </a>
+                        </small>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <a href="http://codefor.de/giessen/" title="Code for Gießen">
+                    <img src="public/img/cfgi-black.svg" alt="" width="200px">
+                    <!-- 0111010001101000011001010010000001100011011000010110101101100101001000000110100101110011001000000110000100100000011011000110100101100101 -->
+                </a>
+            </div>
+        </div>
+        <!-- .container fin -->
+    </footer>
+    <!-- angular.js -->
+    <script src="public/js/vendor/angular.min.js"></script>
+    <!-- bootstrap angular directives -->
+    <script src="public/js/vendor/ui-bootstrap-0.11.0.min.js"></script>
+    <!-- bootstrap templates like tabs etc. -->
+    <script src="public/js/vendor/ui-bootstrap-tpls-0.11.0.min.js"></script>
+    <!-- leaflet.js mapping library -->
+    <script src="public/js/vendor/leaflet.js"></script>
+    <!-- angular leaflet directives -->
+    <script src="public/js/vendor/angular-leaflet-directive.min.js"></script>
+    <!-- geolib library for location based calculations like distance -->
+    <script src="public/js/vendor/geolib.min.js"></script>
+
+    <script src="public/js/app.js"></script>
+    <script src="public/js/filters.js"></script>
+    <script src="public/js/controllers.js"></script>
+    <script src="public/js/services.js"></script>
+</body>
+
 </html>

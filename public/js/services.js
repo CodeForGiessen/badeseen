@@ -20,14 +20,14 @@ angular.module('myApp.services', [])
              * Get user location by querying navigator.geolocation
              *
              * @discussion Given the asynchronic nature of geolocation
-             * this function returns a promise object to use like 
+             * this function returns a promise object to use like
              * `getUserLocation().then(doSmth(result));` with result holding
              * the obtained location. If the user location
              * couldn’t be obtained a fallback location will be returned.
              *
              * @see `MapCtrl` controller or angular
              * @see https://docs.angularjs.org/api/ng/service/$q
-             * 
+             *
              * @return {Object} Angular.js promise object
              */
             function getUserLocation() {
@@ -64,7 +64,7 @@ angular.module('myApp.services', [])
          * @discussion the points should at least have the 2
          * attributes `lat` giving the latitude and `lng` giving the
          * longitude of the point.
-         * 
+         *
          * @param  {[type]} point1 first point
          * @param  {[type]} point2 second point
          * @return {[type]}        distance in meters

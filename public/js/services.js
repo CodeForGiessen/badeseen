@@ -42,17 +42,14 @@ angular.module('myApp.services', [])
             };
         }
     ])
-    .factory('LatLngDistanceService', function() { //[ 'leaflet-directives', function(L) {
-        function distanceTo(lat1, lng1, lat2, lng2) {
-            /* jshint unused:false */
-            return 0;
-            // return L.latLng(lat1, lng1).distanceTo(L.latLng(lat2, lng2));
+    .factory('LatLngDistanceService', function() {
+        function distanceTo(point1, point2) {
+            return geolib.getDistance(point1, point2);
         }
 
         return {
             distanceTo: distanceTo
         };
-        //}])
     })
     .factory('SeaDataProviderService', function() {
         /**

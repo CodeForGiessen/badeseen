@@ -14,7 +14,7 @@ angular.module('myApp.controllers', [])
                 .then(function success(res) {
                     var seaListWithDistance = seaList.map(function(sea) {
                         // distance calculated by long/lat in meters
-                        var distance = LatLngDistanceService.distanceTo(res.lat, res.lng, sea.location.lat, sea.location.lng);
+                        var distance = LatLngDistanceService.distanceTo(res, sea.location);
 
                         return {
                             'name': sea.name,

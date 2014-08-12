@@ -7,7 +7,7 @@ module.exports = function(grunt) {
             scss: './sass',
             css: './public/css',
             js: ['*.js', 'public/js/*.js', 'test/*.js'],
-            beautify: ['*.js', 'public/js/*.js', 'test/*.js', 'index.html']
+            beautify: ['*.js', 'public/js/*.js', 'test/*.js', 'index.html', 'public/partials/**.html']
         },
         buildType: 'Build',
         pkg: grunt.file.readJSON('package.json'),

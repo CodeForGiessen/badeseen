@@ -3,36 +3,36 @@
 
 
 angular.module('myApp.controllers', [])
-    .controller('SeaListCtrl', [
-        '$scope', 'UserLocationService', 'SeaDataProviderService', 'LatLngDistanceService',
-        function($scope, UserLocationService, SeaDataProviderService, LatLngDistanceService) {
-            /* Controller for the sea list */
-            var seaList = SeaDataProviderService.getListOfSeasWithDescription();
+    .controller('LakeListCtrl', [
+        '$scope', 'UserLocationService', 'LakeDataProviderService', 'LatLngDistanceService',
+        function($scope, UserLocationService, LakeDataProviderService, LatLngDistanceService) {
+            /* Controller for the lake list */
+            var lakeList = LakeDataProviderService.getListOfLakesWithDescription();
 
             /* jshint unused:false */
             var userLocation = UserLocationService.getUserLocation()
                 .then(function success(res) {
-                    var seaListWithDistance = seaList.map(function(sea) {
+                    var lakeListWithDistance = lakeList.map(function(lake) {
                         // distance calculated by long/lat in meters
-                        var distance = LatLngDistanceService.distanceTo(res, sea.location);
+                        var distance = LatLngDistanceService.distanceTo(res, lake.location);
 
                         return {
-                            'name': sea.name,
-                            'description': sea.description,
-                            'attributes': sea.attributes,
+                            'name': lake.name,
+                            'description': lake.description,
+                            'attributes': lake.attributes,
                             'distance': distance / 1000
                         };
                     });
 
-                    $scope.seaList = seaListWithDistance;
+                    $scope.lakeList = lakeListWithDistance;
                 }, function error() {
-                    $scope.seaList = seaList; // no distance nor locations
+                    $scope.lakeList = lakeList; // no distance nor locations
                 });
         }
     ])
-    .controller('MapCtrl', ['$scope', 'leafletData', 'SeaDataProviderService',
-        function($scope, leafletData, SeaDataProviderService) {
-            /* Controller for the sea map providing an overview */
+    .controller('MapCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'LakeDataProviderService',
+        function($scope, $modal, leafletData, leafletEvents, LakeDataProviderService) {
+            /* Controller for the lake map providing an overview */
             angular.extend($scope, {
                 giessen: {
                     lat: 50.583732,
@@ -48,6 +48,50 @@ angular.module('myApp.controllers', [])
                     }
                 }
             });
-            $scope.markers = SeaDataProviderService.getSeaLocationMarkers();
+
+            $scope.markers = LakeDataProviderService.getLakeLocationMarkers();
+
+            $scope.$on('leafletDirectiveMarker.click', function(event, leafletEvent) {
+                /* jshint unused:false */
+                var modalInstance = $modal.open({
+                    controller: 'ModalInstanceCtrl',
+                    templateUrl: 'public/partials/lakeDescriptionModal.html',
+                    resolve: {
+                        data: function() {
+                            return $scope.markers[leafletEvent.markerName].data;
+                        }
+                    }
+                });
+            });
+        }
+    ])
+    .controller('MainCtrl', ['$scope', '$window', 'appTitle', 'footNotice', 'contributors', 'labInfo',
+        function($scope, $window, appTitle, footNotice, contributors, labInfo) {
+            var footCols = 0;
+            $window.document.title = appTitle; // set page title
+
+            $scope.title = appTitle; // sets h1
+
+            // build footer and increment column count for bootstrap grid cols
+            $scope.footNotice = footNotice;
+            footCols++;
+
+            $scope.contributors = contributors;
+            footCols++;
+
+            // logo and link with title
+            $scope.labInfo = labInfo;
+            footCols++;
+
+            if (footCols > 0) {
+                $scope.footerColumns = (12 / footCols); // FIXME: what about 5, 7 and so on?
+            } else {
+                $scope.footerCloumns = 1;
+            }
+        }
+    ])
+    .controller('ModalInstanceCtrl', ['$scope', 'data',
+        function($scope, data) {
+            $scope.data = data;
         }
     ]);

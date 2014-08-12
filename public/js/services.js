@@ -127,7 +127,12 @@ angular.module('myApp.services', [])
 
                 ret[lake.name.replace(/ /g, '') + 'Marker'] = {
                     'lat': lake.location.lat,
-                    'lng': lake.location.lng
+                    'lng': lake.location.lng,
+                    'data': {
+                        'name': lake.name,
+                        'description': lake.description,
+                        'attributes': lake.attributes
+                    }
                 };
             }
 

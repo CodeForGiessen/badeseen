@@ -1,24 +1,27 @@
+'use strict';
+
 module.exports = function(grunt) {
 
     grunt.initConfig({
         paths: {
             scss: './sass',
             css: './public/css',
-            js: ['*.js', 'public/js/*.js', 'test/*.js']
+            js: ['*.js', 'public/js/*.js', 'test/*.js'],
+            beautify: ['*.js', 'public/js/*.js', 'test/*.js', 'index.html']
         },
         buildType: 'Build',
         pkg: grunt.file.readJSON('package.json'),
-        archive_name: grunt.option('name') || 'badeseen',
+        archiveName: grunt.option('name') || 'badeseen',
 
         clean: {
             pre: ['dist/', 'build/'],
-            post: ['<%= archive_name %>.zip']
+            post: ['<%= archiveName %>.zip']
         },
 
         compress: {
             main: {
                 options: {
-                    archive: '<%= archive_name %>.zip'
+                    archive: '<%= archiveName %>.zip'
                 },
                 expand: true,
                 cwd: 'build/',
@@ -46,22 +49,56 @@ module.exports = function(grunt) {
             archive: {
                 files: [{
                     expand: true,
-                    src: ['<%= archive_name %>.zip'],
+                    src: ['<%= archiveName %>.zip'],
                     dest: 'dist/'
                 }]
             }
         },
 
         jshint: {
-            src: '<%= paths.js %>'
+            src: '<%= paths.js %>',
+            options: {
+                jshintrc: '.jshintrc' // relative to Gruntfile
+            }
         },
 
         jsbeautifier: {
+            options: {
+                html: {
+                    braceStyle: 'collapse',
+                    indentChar: ' ',
+                    indentScripts: 'keep',
+                    indentSize: 4,
+                    maxPreserveNewlines: 10,
+                    preserveNewlines: true,
+                    unformatted: ['a', 'sub', 'sup', 'b', 'i', 'u'],
+                    wrapLineLength: 0
+                },
+                js: {
+                    braceStyle: 'collapse',
+                    breakChainedMethods: false,
+                    e4x: false,
+                    evalCode: false,
+                    indentChar: ' ',
+                    indentLevel: 0,
+                    indentSize: 4,
+                    indentWithTabs: false,
+                    jslintHappy: false,
+                    keepArrayIndentation: false,
+                    keepFunctionIndentation: false,
+                    maxPreserveNewlines: 10,
+                    preserveNewlines: true,
+                    spaceBeforeConditional: true,
+                    spaceInParen: false,
+                    unescapeStrings: false,
+                    wrapLineLength: 0
+                }
+            },
             beautify: {
-                src: '<%= paths.js %>'
+                src: '<%= paths.beautify %>'
             },
             check: {
-                src: '<%= paths.js %>',
+                src: '<%= paths.beautify %>',
                 options: {
                     mode: 'VERIFY_ONLY'
                 }

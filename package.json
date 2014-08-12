@@ -27,7 +27,6 @@
     "grunt-sass": "^0.14.0",
     "mocha": "^1.21.3",
     "mocha-csslint": "0.0.4",
-    "mocha-jshint": "0.0.9",
-    "w3cjs": "^0.1.25"
+    "mocha-jshint": "0.0.9"
   }
 }

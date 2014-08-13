@@ -111,8 +111,11 @@ angular.module('myApp.controllers', [])
             }
         }
     ])
-    .controller('ModalInstanceCtrl', ['$scope', 'data',
-        function($scope, data) {
+    .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'data',
+        function($scope, $modalInstance, data) {
             $scope.data = data;
+            $scope.dismiss = function() {
+                $modalInstance.dismiss();
+            };
         }
     ]);

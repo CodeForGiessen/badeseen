@@ -71,16 +71,18 @@ angular.module('myApp.controllers', [])
                 });
 
             $scope.$on('leafletDirectiveMarker.click', function(event, leafletEvent) {
-                /* jshint unused:false */
-                var modalInstance = $modal.open({
-                    controller: 'ModalInstanceCtrl',
-                    templateUrl: 'public/partials/lakeDescriptionModal.html',
-                    resolve: {
-                        data: function() {
-                            return $scope.markers[leafletEvent.markerName].data;
+                if (leafletEvent.markerName !== 'userLocationMarker') {
+                    /* jshint unused:false */
+                    var modalInstance = $modal.open({
+                        controller: 'ModalInstanceCtrl',
+                        templateUrl: 'public/partials/lakeDescriptionModal.html',
+                        resolve: {
+                            data: function() {
+                                return $scope.markers[leafletEvent.markerName].data;
+                            }
                         }
-                    }
-                });
+                    });
+                }
             });
         }
     ])

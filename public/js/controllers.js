@@ -53,15 +53,16 @@ angular.module('myApp.controllers', [])
 
             var userLocationMarkerIcon = {
                 'iconUrl': 'public/img/marker-red.png',
-                'shadowUrl':'public/img/marker-shadow.png',
+                'shadowUrl': 'public/img/marker-shadow.png',
                 'iconSize': [25, 41],
                 'shadowSize': [41, 41],
-                'popupAnchor':  [0, -39]
+                'popupAnchor': [0, -39]
             };
 
+            /* jshint unused:false */
             var userLocation = UserLocationService.getUserLocation()
                 .then(function success(res) {
-                    $scope.markers["userLocationMarker"] = {
+                    $scope.markers.userLocationMarker = {
                         'lat': res.lat,
                         'lng': res.lng,
                         'icon': userLocationMarkerIcon,

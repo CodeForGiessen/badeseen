@@ -30,8 +30,8 @@ angular.module('myApp.controllers', [])
                 });
         }
     ])
-    .controller('MapCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'LakeDataProviderService',
-        function($scope, $modal, leafletData, leafletEvents, LakeDataProviderService) {
+    .controller('MapCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'LakeDataProviderService', 'UserLocationService',
+        function($scope, $modal, leafletData, leafletEvents, LakeDataProviderService, UserLocationService) {
             /* Controller for the lake map providing an overview */
             angular.extend($scope, {
                 giessen: {
@@ -50,6 +50,24 @@ angular.module('myApp.controllers', [])
             });
 
             $scope.markers = LakeDataProviderService.getLakeLocationMarkers();
+
+            var userLocationMarkerIcon = {
+                'iconUrl': 'public/img/marker-red.png',
+                'shadowUrl':'public/img/marker-shadow.png',
+                'iconSize': [25, 41],
+                'shadowSize': [41, 41],
+                'popupAnchor':  [0, -39]
+            };
+
+            var userLocation = UserLocationService.getUserLocation()
+                .then(function success(res) {
+                    $scope.markers["userLocationMarker"] = {
+                        'lat': res.lat,
+                        'lng': res.lng,
+                        'icon': userLocationMarkerIcon,
+                        'message': 'Aktueller Standpunkt'
+                    };
+                });
 
             $scope.$on('leafletDirectiveMarker.click', function(event, leafletEvent) {
                 /* jshint unused:false */

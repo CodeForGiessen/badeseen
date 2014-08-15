@@ -35,16 +35,19 @@
         <hr>
         <!-- Example row of columns -->
         <div class="row">
-            <a class="pull-right btn btn-primary" role="button" ng-click="showHelpModal()">?</a>
+            <a class="pull-right btn btn-primary" role="button" ng-click="showHelpModal()"><b>?</b></a>
             <tabset>
-                <tab heading="Karte">
+                <tab>
+                    <tab-heading><span class="fa fa-map-marker"></span>&nbsp;Karte</tab-heading>
+
                     <div ng-controller="MapCtrl" class="map">
                         <leaflet center="giessen" defaults="defaults" markers="markers" events="events">
                         </leaflet>
                     </div>
                 </tab>
 
-                <tab heading="Liste" ng-controller="LakeListCtrl">
+                <tab ng-controller="LakeListCtrl">
+                    <tab-heading><span class="fa fa-list"></span>&nbsp;Liste</tab-heading>
                     <!-- lake description partial -->
                     <div data-ng-include data-src="'public/partials/lakeDescription.html'"></div>
                 </tab>

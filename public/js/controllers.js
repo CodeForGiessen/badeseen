@@ -74,10 +74,10 @@ angular.module('myApp.controllers', [])
                 if (leafletEvent.markerName !== 'userLocationMarker') {
                     /* jshint unused:false */
                     var modalInstance = $modal.open({
-                        controller: 'ModalInstanceCtrl',
-                        templateUrl: 'public/partials/lakeDescriptionModal.html',
-                        resolve: {
-                            data: function() {
+                        'controller': 'ModalInstanceCtrl',
+                        'templateUrl': 'public/partials/lakeDescriptionModal.html',
+                        'resolve': {
+                            'data': function() {
                                 return $scope.markers[leafletEvent.markerName].data;
                             }
                         }

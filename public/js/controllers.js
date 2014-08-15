@@ -74,10 +74,10 @@ angular.module('myApp.controllers', [])
                 if (leafletEvent.markerName !== 'userLocationMarker') {
                     /* jshint unused:false */
                     var modalInstance = $modal.open({
-                        controller: 'ModalInstanceCtrl',
-                        templateUrl: 'public/partials/lakeDescriptionModal.html',
-                        resolve: {
-                            data: function() {
+                        'controller': 'ModalInstanceCtrl',
+                        'templateUrl': 'public/partials/lakeDescriptionModal.html',
+                        'resolve': {
+                            'data': function() {
                                 return $scope.markers[leafletEvent.markerName].data;
                             }
                         }
@@ -86,8 +86,8 @@ angular.module('myApp.controllers', [])
             });
         }
     ])
-    .controller('MainCtrl', ['$scope', '$window', 'appTitle', 'footNotice', 'contributors', 'labInfo',
-        function($scope, $window, appTitle, footNotice, contributors, labInfo) {
+    .controller('MainCtrl', ['$scope', '$window', '$modal', 'appTitle', 'footNotice', 'contributors', 'labInfo',
+        function($scope, $window, $modal, appTitle, footNotice, contributors, labInfo) {
             var footCols = 0;
             $window.document.title = appTitle; // set page title
 
@@ -109,6 +109,20 @@ angular.module('myApp.controllers', [])
             } else {
                 $scope.footerCloumns = 1;
             }
+
+            // show help modal
+            $scope.showHelpModal = function() {
+                /* jshint unused:false */
+                var modalInstance = $modal.open({
+                    'controller': 'ModalInstanceCtrl',
+                    'templateUrl': 'public/partials/faq.html',
+                    'resolve': {
+                        'data': function() {
+                            return null;
+                        }
+                    }
+                });
+            };
         }
     ])
     .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'data',

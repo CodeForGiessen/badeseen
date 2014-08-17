@@ -28,6 +28,9 @@ html, body {
   border: 1px solid #e1e1e8;
   border-radius: 4px; }
 
+h4 {
+  margin-top: 0; }
+
 /**
  * Tabs
  */
@@ -60,6 +63,12 @@ html, body {
 .angular-leaflet-map {
   height: 80%;
   width: 100%; }
+
+/**
+ * Modal
+ */
+.modal-body article + article {
+  margin-top: 1.5em; }
 
 /**
  * Footer

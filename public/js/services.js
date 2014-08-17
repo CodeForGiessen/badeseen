@@ -125,7 +125,7 @@ angular.module('myApp.services', [])
             for (var i = 0; i < lakes.length; i++) {
                 var lake = lakes[i];
 
-                ret[lake.name.replace(/ /g, '') + 'Marker'] = {
+                ret[lake.name.replace(/[ _\W]/g, '') + 'Marker'] = {
                     'lat': lake.location.lat,
                     'lng': lake.location.lng,
                     'data': {

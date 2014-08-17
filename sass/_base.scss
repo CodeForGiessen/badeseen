@@ -53,6 +53,18 @@ html, body {
 }
 
 /**
+ * Modal
+ */
+.modal-body {
+	h4 {
+		margin-top: 0;
+	}
+
+	article + article {
+		margin-top: 1.5em;
+	}
+}
+/**
  * Footer
  */
 footer {

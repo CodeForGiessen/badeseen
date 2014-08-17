@@ -62,6 +62,14 @@ html, body {
   width: 100%; }
 
 /**
+ * Modal
+ */
+.modal-body h4 {
+  margin-top: 0; }
+.modal-body article + article {
+  margin-top: 1.5em; }
+
+/**
  * Footer
  */
 footer {

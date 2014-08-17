@@ -38,7 +38,8 @@
             <a class="pull-right btn btn-primary" role="button" ng-click="showHelpModal()"><b>?</b></a>
             <tabset>
                 <tab>
-                    <tab-heading><span class="fa fa-map-marker"></span>&nbsp;Karte</tab-heading>
+                    <tab-heading>
+                        <span class="fa fa-map-marker"></span>&nbsp;Karte</tab-heading>
 
                     <div ng-controller="MapCtrl" class="map">
                         <leaflet center="giessen" defaults="defaults" markers="markers" events="events">
@@ -47,7 +48,8 @@
                 </tab>
 
                 <tab ng-controller="LakeListCtrl">
-                    <tab-heading><span class="fa fa-list"></span>&nbsp;Liste</tab-heading>
+                    <tab-heading>
+                        <span class="fa fa-list"></span>&nbsp;Liste</tab-heading>
                     <!-- lake description partial -->
                     <div data-ng-include data-src="'public/partials/lakeDescription.html'"></div>
                 </tab>

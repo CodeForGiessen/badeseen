@@ -24,6 +24,10 @@ angular.module('myApp.controllers', [])
                         };
                     });
 
+                    lakeListWithDistance.sort(function compare(a, b) {
+                        return a.distance - b.distance;
+                    });
+
                     $scope.lakeList = lakeListWithDistance;
                 }, function error() {
                     $scope.lakeList = lakeList; // no distance nor locations
@@ -33,7 +37,6 @@ angular.module('myApp.controllers', [])
     .controller('MapCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'LakeDataProviderService', 'UserLocationService', 'mapCenter',
         function($scope, $modal, leafletData, leafletEvents, LakeDataProviderService, UserLocationService, mapCenter) {
             /* Controller for the lake map providing an overview */
-            console.log(mapCenter);
             angular.extend($scope, {
                 center: mapCenter,
                 defaults: {

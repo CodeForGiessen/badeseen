@@ -10,4 +10,17 @@ angular.module('myApp.values', [])
         'website': 'http://andinfinity.de',
         'mail': 'chris@andinfinity.de'
     }])
-    .value('footNotice', 'Dies ist ein Projekt des OK Lab Gießen. Die Inhalte stehen unter der MIT-Lizenz auf <a href="https://github.com/CodeForGiessen/badeseen" title="Quelltext">GitHub</a> zur Verfügung.');
+    .value('footNotice', 'Dies ist ein Projekt des OK Lab Gießen. Die Inhalte stehen unter der MIT-Lizenz auf <a href="https://github.com/CodeForGiessen/badeseen" title="Quelltext">GitHub</a> zur Verfügung.')
+    .value('mapCenter',
+        // this is the position the map will be centered from
+        {
+            'lat': 50.583732,
+            'lng': 8.678344,
+            'zoom': 11
+        })
+    .value('fallbackMarker',
+        // this is the position the red marker is set to
+        {
+            'lat': 50.583732,
+            'lng': 8.678344
+        });

@@ -24,6 +24,10 @@ angular.module('myApp.controllers', [])
                         };
                     });
 
+                    lakeListWithDistance.sort(function compare(a, b) {
+                        return a.distance - b.distance;
+                    });
+
                     $scope.lakeList = lakeListWithDistance;
                 }, function error() {
                     $scope.lakeList = lakeList; // no distance nor locations

@@ -2,20 +2,8 @@
 
 
 angular.module('myApp.services', [])
-    .factory('UserLocationService', ['$q',
-        function($q) {
-            /**
-             * Return location of Gießen city
-             * @return {Object} Location given by latitude and longitude wrapped
-             * by an object
-             */
-            function getFallbackLocation() {
-                return {
-                    'lat': 50.583732,
-                    'lng': 8.678344
-                };
-            }
-
+    .factory('UserLocationService', ['$q', 'fallbackMarker',
+        function($q, fallbackMarker) {
             /**
              * Get user location by querying navigator.geolocation
              *
@@ -43,7 +31,7 @@ angular.module('myApp.services', [])
                         }, function error() {
                             // client forbids (or is not able to) location usage
                             // so a fallback is used
-                            defer.resolve(getFallbackLocation());
+                            defer.resolve(fallbackMarker);
                         });
                 }
 
@@ -52,7 +40,6 @@ angular.module('myApp.services', [])
 
             // return service api
             return {
-                getFallbackLocation: getFallbackLocation,
                 getUserLocation: getUserLocation
             };
         }

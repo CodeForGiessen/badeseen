@@ -30,15 +30,12 @@ angular.module('myApp.controllers', [])
                 });
         }
     ])
-    .controller('MapCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'LakeDataProviderService', 'UserLocationService',
-        function($scope, $modal, leafletData, leafletEvents, LakeDataProviderService, UserLocationService) {
+    .controller('MapCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'LakeDataProviderService', 'UserLocationService', 'mapCenter',
+        function($scope, $modal, leafletData, leafletEvents, LakeDataProviderService, UserLocationService, mapCenter) {
             /* Controller for the lake map providing an overview */
+            console.log(mapCenter);
             angular.extend($scope, {
-                giessen: {
-                    lat: 50.583732,
-                    lng: 8.678344,
-                    zoom: 11
-                },
+                center: mapCenter,
                 defaults: {
                     tileLayer: 'https://{s}.tiles.mapbox.com/v3/foobar123.j5b19dpp/{z}/{x}/{y}.png',
                     tileLayerOptions: {

@@ -33,7 +33,6 @@ angular.module('myApp.controllers', [])
     .controller('MapCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'LakeDataProviderService', 'UserLocationService', 'mapCenter',
         function($scope, $modal, leafletData, leafletEvents, LakeDataProviderService, UserLocationService, mapCenter) {
             /* Controller for the lake map providing an overview */
-            console.log(mapCenter);
             angular.extend($scope, {
                 center: mapCenter,
                 defaults: {

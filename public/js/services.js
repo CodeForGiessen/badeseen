@@ -13,7 +13,7 @@ angular.module('myApp.services', [])
              * the obtained location. If the user location
              * couldn’t be obtained a fallback location will be returned.
              *
-             * @see `MapCtrl` controller or angular
+             * @see `MapTabCtrl` controller or angular
              * @see https://docs.angularjs.org/api/ng/service/$q
              *
              * @return {Object} Angular.js promise object

@@ -1,3 +1,6 @@
+'use strict';
+
+
 angular.module('myApp.values', [])
     .value('appTitle', 'Wasserqualität der Badeseen im Umkreis Gießens')
     .value('labInfo', {

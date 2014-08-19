@@ -94,15 +94,21 @@ angular.module('myApp.controllers', [])
             $scope.title = appTitle; // sets h1
 
             // build footer and increment column count for bootstrap grid cols
-            $scope.footNotice = footNotice;
-            footCols++;
+            if (footNotice) {
+                $scope.footNotice = footNotice;
+                footCols++;
+            }
 
-            $scope.contributors = contributors;
-            footCols++;
+            if (contributors) {
+                $scope.contributors = contributors;
+                footCols++;
+            }
 
             // logo and link with title
-            $scope.labInfo = labInfo;
-            footCols++;
+            if (labInfo) {
+                $scope.labInfo = labInfo;
+                footCols++;
+            }
 
             if (footCols > 0) {
                 $scope.footerColumns = (12 / footCols); // FIXME: what about 5, 7 and so on?

@@ -3,7 +3,7 @@
 
 
 angular.module('myApp.controllers', [])
-    .controller('LakeListCtrl', [
+    .controller('LakeListTabCtrl', [
         '$scope', 'UserLocationService', 'LakeDataProviderService', 'LatLngDistanceService',
         function($scope, UserLocationService, LakeDataProviderService, LatLngDistanceService) {
             /* Controller for the lake list */
@@ -34,7 +34,7 @@ angular.module('myApp.controllers', [])
                 });
         }
     ])
-    .controller('MapCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'LakeDataProviderService', 'UserLocationService', 'mapCenter',
+    .controller('MapTabCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'LakeDataProviderService', 'UserLocationService', 'mapCenter',
         function($scope, $modal, leafletData, leafletEvents, LakeDataProviderService, UserLocationService, mapCenter) {
             /* Controller for the lake map providing an overview */
             angular.extend($scope, {

@@ -41,13 +41,13 @@
                     <tab-heading>
                         <span class="fa fa-map-marker"></span>&nbsp;Karte</tab-heading>
 
-                    <div ng-controller="MapCtrl" class="map">
+                    <div ng-controller="MapTabCtrl" class="map">
                         <leaflet center="center" defaults="defaults" markers="markers" events="events">
                         </leaflet>
                     </div>
                 </tab>
 
-                <tab ng-controller="LakeListCtrl">
+                <tab ng-controller="LakeListTabCtrl">
                     <tab-heading>
                         <span class="fa fa-list"></span>&nbsp;Liste</tab-heading>
                     <!-- lake description partial -->

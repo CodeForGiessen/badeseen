@@ -1,4 +1,3 @@
-[![Stories in Ready](https://badge.waffle.io/CodeForGiessen/badeseen.png?label=ready&title=Ready)](https://waffle.io/CodeForGiessen/badeseen)
 badeseen
 ========
 
@@ -6,6 +5,7 @@ Qualität der Badeseen im Landkreis Gießen
 
 [![Build Status](https://travis-ci.org/CodeForGiessen/badeseen.svg?branch=master)](https://travis-ci.org/CodeForGiessen/badeseen)
 [![devDependency Status](https://david-dm.org/CodeForGiessen/badeseen/dev-status.svg?branch=master)](https://david-dm.org/CodeForGiessen/badeseen#info=devDependencies)
+[![Stories in Ready](https://badge.waffle.io/CodeForGiessen/badeseen.png?label=ready&title=Ready)](https://waffle.io/CodeForGiessen/badeseen)
 
 ## Development
 ### Vorbereitungen

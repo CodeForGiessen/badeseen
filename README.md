@@ -8,6 +8,8 @@ Qualität der Badeseen im Landkreis Gießen
 [![Stories in Ready](https://badge.waffle.io/CodeForGiessen/badeseen.png?label=ready&title=Ready)](https://waffle.io/CodeForGiessen/badeseen)
 
 ## Development
+Bevor es an die Arbeit geht, bitte vorher [hier](https://waffle.io/CodeForGiessen/badeseen) schauen ob tasks als `Ready` deklariert wurden und dann daran arbeiten. Die Tags `ready` und `help wanted` zeigen an, dass hier gerne geholfen werden darf. Tasks die unter `In Progress` stehen bitte nicht in angriff nehmen.
+
 ### Vorbereitungen
 Um mit dem Entwickeln zu beginnen müssen über den Node Package Manager (`npm`) zunächst alle Abhängigkeiten installiert werden. Diese erlauben das automatische Testen des Codes, das Compilen des SASS-Codes und das Testen der Quelltexte gegen die Sprachspezifikationen (JShint, CSSLint).
 

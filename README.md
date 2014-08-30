@@ -3,6 +3,9 @@ badeseen
 
 Qualität der Badeseen im Landkreis Gießen
 
+[![Build Status](https://travis-ci.org/CodeForGiessen/badeseen.svg?branch=master)](https://travis-ci.org/CodeForGiessen/badeseen)
+[![devDependency Status](https://david-dm.org/CodeForGiessen/badeseen/dev-status.svg?branch=master)](https://david-dm.org/CodeForGiessen/badeseen#info=devDependencies)
+
 ## Development
 ### Vorbereitungen
 Um mit dem Entwickeln zu beginnen müssen über den Node Package Manager (`npm`) zunächst alle Abhängigkeiten installiert werden. Diese erlauben das automatische Testen des Codes, das Compilen des SASS-Codes und das Testen der Quelltexte gegen die Sprachspezifikationen (JShint, CSSLint).

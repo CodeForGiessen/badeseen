@@ -1,9 +1,9 @@
 'use strict';
 
 
-angular.module('myApp.values', [])
     .value('appTitle', 'Wasserqualität der Badeseen im Umkreis Gießens')
     .value('labInfo', {
+angular.module('badeseen.values', [])
         'name': 'Code for Gießen',
         'website': 'http://codefor.de/giessen/',
         'logoPath': 'public/img/cfgi-black.svg'

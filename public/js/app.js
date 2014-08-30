@@ -1,11 +1,11 @@
 'use strict';
 
 
-angular.module('myApp', [
+angular.module('badeseen', [
     'ui.bootstrap',
     'leaflet-directive',
-    'myApp.filters',
-    'myApp.services',
-    'myApp.controllers',
-    'myApp.values'
+    'badeseen.filters',
+    'badeseen.services',
+    'badeseen.controllers',
+    'badeseen.values'
 ]);

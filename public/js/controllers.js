@@ -1,7 +1,7 @@
 'use strict';
 
 
-angular.module('myApp.controllers', [])
+angular.module('badeseen.controllers', [])
     .controller('LakeListTabCtrl', [
         '$scope', 'UserLocationService', 'LakeDataProviderService', 'LatLngDistanceService',
         function($scope, UserLocationService, LakeDataProviderService, LatLngDistanceService) {

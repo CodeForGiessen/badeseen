@@ -1,7 +1,7 @@
 'use strict';
 
 
-angular.module('myApp.services', [])
+angular.module('badeseen.services', [])
     .factory('UserLocationService', ['$q', 'fallbackMarker',
         function($q, fallbackMarker) {
             /**

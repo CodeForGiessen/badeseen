@@ -2,8 +2,8 @@
 
 
 angular.module('badeseen.services', [])
-    .factory('UserLocationService', ['$q', 'fallbackMarker',
-        function($q, fallbackMarker) {
+    .factory('UserLocationService', ['$q', 'FALLBACK_MARKER',
+        function($q, FALLBACK_MARKER) {
             /**
              * Get user location by querying navigator.geolocation
              *
@@ -31,7 +31,7 @@ angular.module('badeseen.services', [])
                         }, function error() {
                             // client forbids (or is not able to) location usage
                             // so a fallback is used
-                            defer.resolve(fallbackMarker);
+                            defer.resolve(FALLBACK_MARKER);
                         });
                 }
 

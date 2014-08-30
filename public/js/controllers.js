@@ -33,11 +33,11 @@ angular.module('badeseen.controllers', [])
                 });
         }
     ])
-    .controller('MapTabCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'LakeDataProviderService', 'UserLocationService', 'mapCenter',
-        function($scope, $modal, leafletData, leafletEvents, LakeDataProviderService, UserLocationService, mapCenter) {
+    .controller('MapTabCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'LakeDataProviderService', 'UserLocationService', 'MAP_CENTER',
+        function($scope, $modal, leafletData, leafletEvents, LakeDataProviderService, UserLocationService, MAP_CENTER) {
             /* Controller for the lake map providing an overview */
             angular.extend($scope, {
-                center: mapCenter,
+                center: MAP_CENTER,
                 defaults: {
                     tileLayer: 'https://{s}.tiles.mapbox.com/v3/foobar123.j5b19dpp/{z}/{x}/{y}.png',
                     tileLayerOptions: {
@@ -85,27 +85,27 @@ angular.module('badeseen.controllers', [])
             });
         }
     ])
-    .controller('MainCtrl', ['$scope', '$window', '$modal', 'appTitle', 'footNotice', 'contributors', 'labInfo',
-        function($scope, $window, $modal, appTitle, footNotice, contributors, labInfo) {
+    .controller('MainCtrl', ['$scope', '$window', '$modal', 'APP_TITLE', 'FOOT_NOTICE', 'CONTRIBUTORS', 'LAB_INFO',
+        function($scope, $window, $modal, APP_TITLE, FOOT_NOTICE, CONTRIBUTORS, LAB_INFO) {
             var footCols = 0;
-            $window.document.title = appTitle; // set page title
+            $window.document.title = APP_TITLE; // set page title
 
-            $scope.title = appTitle; // sets h1
+            $scope.title = APP_TITLE; // sets h1
 
             // build footer and increment column count for bootstrap grid cols
-            if (footNotice) {
-                $scope.footNotice = footNotice;
+            if (FOOT_NOTICE) {
+                $scope.footNotice = FOOT_NOTICE;
                 footCols++;
             }
 
-            if (contributors) {
-                $scope.contributors = contributors;
+            if (CONTRIBUTORS) {
+                $scope.contributors = CONTRIBUTORS;
                 footCols++;
             }
 
             // logo and link with title
-            if (labInfo) {
-                $scope.labInfo = labInfo;
+            if (LAB_INFO) {
+                $scope.labInfo = LAB_INFO;
                 footCols++;
             }
 

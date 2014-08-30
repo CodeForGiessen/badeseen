@@ -7,5 +7,5 @@ angular.module('badeseen', [
     'badeseen.filters',
     'badeseen.services',
     'badeseen.controllers',
-    'badeseen.values'
+    'badeseen.constants'
 ]);

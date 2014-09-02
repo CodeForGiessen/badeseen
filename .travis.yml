@@ -11,3 +11,7 @@ before_script:
 
 script:
   - node_modules/karma/bin/karma start test/karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
+
+branches:
+  only:
+    - development

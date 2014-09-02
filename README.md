@@ -35,7 +35,7 @@ Wenn alle Tests durchlaufen und der JS-Code beautified ist, kann der Code ins Re
 Wenn an den SASS-Dateien von Font-Awesome etwas angepasst wurde, müssen diese erneut in CSS umgewandelt werden, was durch `grunt sass:fontawesome` erledigt werden kann. Dieser Task muss explizit aufgerufen werden und wird **nicht** automatisch ausgeführt.
 
 ## Releases
-Releases werden nach dem git workflow mit hilfe der [semantischen Versionierung](http://semver.org) versioniert. Minor-Releases reichen aus um in den master branch gemerged zu werden, patch releases jedoch sind development releases.
+Releases werden nach dem git workflow mit Hilfe der [semantischen Versionierung](http://semver.org) versioniert. Minor-Releases reichen aus um in den master branch gemerged zu werden, patch releases jedoch sind development releases und verbleiben im development branch. Jedes Release wird mit einem Tag markiert und Major/Minor Releases werden in GitHub als solche eingetragen (mit zip).
 
 ## Deployment
 Eine auslieferbare Kopie der App kann über `grunt deploy` generiert werden. So wird ein .zip-Archiv erstellt (in `dist/`), ohne die Nodejs-Abhängigkeiten, den SASS-Code, die Tests usw.

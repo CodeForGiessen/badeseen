@@ -20,6 +20,8 @@ npm install
 
 Bevor mit der Entwicklung begonnen wird, sollte `grunt watch` gestartet werden. So wird nach jeder Änderung auf Syntaxfehler etc. geprüft, sowie SASS compiled — damit ist im Browser direkt live der aktuellste Entwicklungs-Stand einsehbar.
 
+Die Entwicklung findet im `development` branch statt, master repräsentiert immer einen stabilen Zustand. [git workflow](http://nvie.com/posts/a-successful-git-branching-model/)
+
 ### Nach Änderungen
 Nachdem Änderungen vorgenommen worden sind, sollte `make test` ausgeführt werden und ggf. notwendige `ignore`-Anweisungen für jshint hinzugefügt werden (aber nur wenn bewusst ist, was das für Auswirkungen hat!). Neuer Code ist mit Tests auszustatten, die Modulweise in `./test` zu finden sind.
 
@@ -31,6 +33,9 @@ Wenn alle Tests durchlaufen und der JS-Code beautified ist, kann der Code ins Re
 
 #### Font-Awesome
 Wenn an den SASS-Dateien von Font-Awesome etwas angepasst wurde, müssen diese erneut in CSS umgewandelt werden, was durch `grunt sass:fontawesome` erledigt werden kann. Dieser Task muss explizit aufgerufen werden und wird **nicht** automatisch ausgeführt.
+
+## Releases
+Releases werden nach dem git workflow mit hilfe der [semantischen Versionierung](http://semver.org) versioniert. Minor-Releases reichen aus um in den master branch gemerged zu werden, patch releases jedoch sind development releases.
 
 ## Deployment
 Eine auslieferbare Kopie der App kann über `grunt deploy` generiert werden. So wird ein .zip-Archiv erstellt (in `dist/`), ohne die Nodejs-Abhängigkeiten, den SASS-Code, die Tests usw.

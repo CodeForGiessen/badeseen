@@ -34,10 +34,10 @@
         <h1>{{ title }}</h1>
         <hr>
         <!-- Example row of columns -->
-        <div class="row">
+        <div class="row" ng-controller="TabCtrl">
             <a class="pull-right btn btn-primary" role="button" ng-click="showHelpModal()"><b>?</b></a>
             <tabset>
-                <tab>
+                <tab select="invalidateMapSize()">
                     <tab-heading>
                         <span class="fa fa-map-marker"></span>&nbsp;Karte</tab-heading>
 

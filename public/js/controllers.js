@@ -2,6 +2,17 @@
 
 
 angular.module('badeseen.controllers', [])
+    .controller('TabCtrl', ['$scope', 'leafletData',
+        function($scope, leafletData) {
+            // when switching to the map tab invalidateMapSize() is called and
+            // the map size has to be invalidated to guarantee proper displaying
+            $scope.invalidateMapSize = function() {
+                leafletData.getMap().then(function(map) {
+                    map.invalidateSize();
+                });
+            };
+        }
+    ])
     .controller('LakeListTabCtrl', [
         '$scope', 'UserLocationService', 'LakeDataProviderService', 'LatLngDistanceService',
         function($scope, UserLocationService, LakeDataProviderService, LatLngDistanceService) {

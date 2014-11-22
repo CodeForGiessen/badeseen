@@ -6,3 +6,5 @@ dist/**
 test/coverage/**
 **.swp
 npm-debug.log
+.tern-project
+.*sublime-workspace

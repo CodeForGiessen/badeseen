@@ -1,7 +1,7 @@
 'use strict';
 
 
-angular.module('badeseen.controllers', [])
+angular.module('badeseen.controllers', ['leaflet-directive'])
     .controller('TabCtrl', ['$scope', 'leafletData',
         function($scope, leafletData) {
             // when switching to the map tab invalidateMapSize() is called and
@@ -14,41 +14,31 @@ angular.module('badeseen.controllers', [])
         }
     ])
     .controller('LakeListTabCtrl', [
-        '$scope', 'UserLocationService', 'LakeDataProviderService', 'LatLngDistanceService',
-        function($scope, UserLocationService, LakeDataProviderService, LatLngDistanceService) {
+        '$scope', 'UserLocationService', 'LatLngDistanceService', 'FetchLakeDataService',
+        function($scope, UserLocationService, LatLngDistanceService, FetchLakeDataService) {
             /* Controller for the lake list */
-            var lakeList = LakeDataProviderService.getListOfLakesWithDescription();
+            var lakeList = {};
 
             /* jshint unused:false */
-            var userLocation = UserLocationService.getUserLocation()
-                .then(function success(res) {
-                    var lakeListWithDistance = lakeList.map(function(lake) {
-                        // distance calculated by long/lat in meters
-                        var distance = LatLngDistanceService.distanceTo(res, lake.location);
-
-                        return {
-                            'name': lake.name,
-                            'description': lake.description,
-                            'attributes': lake.attributes,
-                            'distance': distance / 1000
-                        };
-                    });
-
-                    lakeListWithDistance.sort(function compare(a, b) {
-                        return a.distance - b.distance;
-                    });
-
-                    $scope.lakeList = lakeListWithDistance;
-                }, function error() {
-                    $scope.lakeList = lakeList; // no distance nor locations
+            FetchLakeDataService.fetch().success(function(data) {
+                var lakeListWithDistance = data.map(function(lake) {
+                    return {
+                        'name': lake.name,
+                        'description': lake.introtext,
+                        'attributes': {},
+                        'distance': 0
+                    };
                 });
+                $scope.lakeList = lakeListWithDistance;
+            });
         }
     ])
-    .controller('MapTabCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'LakeDataProviderService', 'UserLocationService', 'MAP_CENTER',
-        function($scope, $modal, leafletData, leafletEvents, LakeDataProviderService, UserLocationService, MAP_CENTER) {
+    .controller('MapTabCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'UserLocationService', 'FetchLakeDataService', 'MAP_CENTER',
+        function($scope, $modal, leafletData, leafletEvents, UserLocationService, FetchLakeDataService, MAP_CENTER) {
             /* Controller for the lake map providing an overview */
             angular.extend($scope, {
                 center: MAP_CENTER,
+                markers: [],
                 defaults: {
                     tileLayer: 'https://{s}.tiles.mapbox.com/v3/foobar123.j5b19dpp/{z}/{x}/{y}.png',
                     tileLayerOptions: {
@@ -59,7 +49,30 @@ angular.module('badeseen.controllers', [])
                 }
             });
 
-            $scope.markers = LakeDataProviderService.getLakeLocationMarkers();
+            (function() {
+                FetchLakeDataService.fetch().success(function(data) {
+
+                    var _markers = data.map(function(item) {
+                        var oldLat = item.latitude;
+                        var oldLng = item.longitude;
+
+                        delete item.longitude;
+                        delete item.latitude;
+
+                        item.lat = parseFloat(oldLat);
+                        item.lng = parseFloat(oldLng);
+
+                        return item;
+                    });
+
+                    angular.extend($scope, {
+                        markers: _markers
+                    }
+                    );
+                });
+            })();
+
+            // $scope.addMarkers();
 
             var userLocationMarkerIcon = {
                 'iconUrl': 'public/img/marker-red.png',
@@ -88,6 +101,7 @@ angular.module('badeseen.controllers', [])
                         'templateUrl': 'public/partials/lakeDescriptionModal.html',
                         'resolve': {
                             'data': function() {
+                                console.log($scope.markers[leafletEvent.markerName].data);
                                 return $scope.markers[leafletEvent.markerName].data;
                             }
                         }

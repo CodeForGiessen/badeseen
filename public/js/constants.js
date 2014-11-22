@@ -12,6 +12,18 @@ angular.module('badeseen.constants', [])
         'name': 'Christian Schulze',
         'website': 'http://andinfinity.de',
         'mail': 'chris@andinfinity.de'
+    }, {
+        'name': 'Marco Schaefer',
+        'website': '',
+        'mail': 'm.schaefer.mail+codeforgi@gmail.com'
+    }, {
+        'name': 'Vincent Elliot Wagner',
+        'website': '',
+        'mail': 'zockerticker+codeforgi@gmail.com'
+    }, {
+        'name': 'Christian Heigele',
+        'website': '',
+        'mail': ''
     }])
     .constant('FOOT_NOTICE', 'Dies ist ein Projekt des OK Lab Gießen. Die Inhalte stehen unter der MIT-Lizenz auf <a href="https://github.com/CodeForGiessen/badeseen" title="Quelltext">GitHub</a> zur Verfügung.')
     .constant('MAP_CENTER',

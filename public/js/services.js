@@ -31,7 +31,7 @@ angular.module('badeseen.services', [])
                         }, function error() {
                             // client forbids (or is not able to) location usage
                             // so a fallback is used
-                            defer.resolve(FALLBACK_MARKER);
+                            defer.reject(FALLBACK_MARKER);
                         });
                 }
 

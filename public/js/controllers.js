@@ -1,44 +1,44 @@
-/*jslint node: true */
 'use strict';
 
 
-angular.module('myApp.controllers', [])
-    .controller('LakeListCtrl', [
-        '$scope', 'UserLocationService', 'LakeDataProviderService', 'LatLngDistanceService',
-        function($scope, UserLocationService, LakeDataProviderService, LatLngDistanceService) {
-            /* Controller for the lake list */
-            var lakeList = LakeDataProviderService.getListOfLakesWithDescription();
-
-            /* jshint unused:false */
-            var userLocation = UserLocationService.getUserLocation()
-                .then(function success(res) {
-                    var lakeListWithDistance = lakeList.map(function(lake) {
-                        // distance calculated by long/lat in meters
-                        var distance = LatLngDistanceService.distanceTo(res, lake.location);
-
-                        return {
-                            'name': lake.name,
-                            'description': lake.description,
-                            'attributes': lake.attributes,
-                            'distance': distance / 1000
-                        };
-                    });
-
-                    lakeListWithDistance.sort(function compare(a, b) {
-                        return a.distance - b.distance;
-                    });
-
-                    $scope.lakeList = lakeListWithDistance;
-                }, function error() {
-                    $scope.lakeList = lakeList; // no distance nor locations
+angular.module('badeseen.controllers', ['leaflet-directive'])
+    .controller('TabCtrl', ['$scope', 'leafletData',
+        function($scope, leafletData) {
+            // when switching to the map tab invalidateMapSize() is called and
+            // the map size has to be invalidated to guarantee proper displaying
+            $scope.invalidateMapSize = function() {
+                leafletData.getMap().then(function(map) {
+                    map.invalidateSize();
                 });
+            };
         }
     ])
-    .controller('MapCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'LakeDataProviderService', 'UserLocationService', 'mapCenter',
-        function($scope, $modal, leafletData, leafletEvents, LakeDataProviderService, UserLocationService, mapCenter) {
+    .controller('LakeListTabCtrl', [
+        '$scope', 'UserLocationService', 'LatLngDistanceService', 'FetchLakeDataService',
+        function($scope, UserLocationService, LatLngDistanceService, FetchLakeDataService) {
+            /* Controller for the lake list */
+            var lakeList = {};
+
+            /* jshint unused:false */
+            FetchLakeDataService.fetch().success(function(data) {
+                var lakeListWithDistance = data.map(function(lake) {
+                    return {
+                        'name': lake.name,
+                        'description': lake.introtext,
+                        'attributes': {},
+                        'distance': 0
+                    };
+                });
+                $scope.lakeList = lakeListWithDistance;
+            });
+        }
+    ])
+    .controller('MapTabCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'UserLocationService', 'FetchLakeDataService', 'MAP_CENTER',
+        function($scope, $modal, leafletData, leafletEvents, UserLocationService, FetchLakeDataService, MAP_CENTER) {
             /* Controller for the lake map providing an overview */
             angular.extend($scope, {
-                center: mapCenter,
+                center: MAP_CENTER,
+                markers: [],
                 defaults: {
                     tileLayer: 'https://{s}.tiles.mapbox.com/v3/foobar123.j5b19dpp/{z}/{x}/{y}.png',
                     tileLayerOptions: {
@@ -49,7 +49,30 @@ angular.module('myApp.controllers', [])
                 }
             });
 
-            $scope.markers = LakeDataProviderService.getLakeLocationMarkers();
+            (function() {
+                FetchLakeDataService.fetch().success(function(data) {
+
+                    var _markers = data.map(function(item) {
+                        var oldLat = item.latitude;
+                        var oldLng = item.longitude;
+
+                        delete item.longitude;
+                        delete item.latitude;
+
+                        item.lat = parseFloat(oldLat);
+                        item.lng = parseFloat(oldLng);
+
+                        return item;
+                    });
+
+                    angular.extend($scope, {
+                        markers: _markers
+                    }
+                    );
+                });
+            })();
+
+            // $scope.addMarkers();
 
             var userLocationMarkerIcon = {
                 'iconUrl': 'public/img/marker-red.png',
@@ -78,6 +101,7 @@ angular.module('myApp.controllers', [])
                         'templateUrl': 'public/partials/lakeDescriptionModal.html',
                         'resolve': {
                             'data': function() {
+                                console.log($scope.markers[leafletEvent.markerName].data);
                                 return $scope.markers[leafletEvent.markerName].data;
                             }
                         }
@@ -86,23 +110,29 @@ angular.module('myApp.controllers', [])
             });
         }
     ])
-    .controller('MainCtrl', ['$scope', '$window', '$modal', 'appTitle', 'footNotice', 'contributors', 'labInfo',
-        function($scope, $window, $modal, appTitle, footNotice, contributors, labInfo) {
+    .controller('MainCtrl', ['$scope', '$window', '$modal', 'APP_TITLE', 'FOOT_NOTICE', 'CONTRIBUTORS', 'LAB_INFO',
+        function($scope, $window, $modal, APP_TITLE, FOOT_NOTICE, CONTRIBUTORS, LAB_INFO) {
             var footCols = 0;
-            $window.document.title = appTitle; // set page title
+            $window.document.title = APP_TITLE; // set page title
 
-            $scope.title = appTitle; // sets h1
+            $scope.title = APP_TITLE; // sets h1
 
             // build footer and increment column count for bootstrap grid cols
-            $scope.footNotice = footNotice;
-            footCols++;
+            if (FOOT_NOTICE) {
+                $scope.footNotice = FOOT_NOTICE;
+                footCols++;
+            }
 
-            $scope.contributors = contributors;
-            footCols++;
+            if (CONTRIBUTORS) {
+                $scope.contributors = CONTRIBUTORS;
+                footCols++;
+            }
 
             // logo and link with title
-            $scope.labInfo = labInfo;
-            footCols++;
+            if (LAB_INFO) {
+                $scope.labInfo = LAB_INFO;
+                footCols++;
+            }
 
             if (footCols > 0) {
                 $scope.footerColumns = (12 / footCols); // FIXME: what about 5, 7 and so on?

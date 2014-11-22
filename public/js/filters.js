@@ -1,7 +1,7 @@
 'use strict';
 
 
-angular.module('myApp.filters', [])
+angular.module('badeseen.filters', [])
     .filter('trustHtml', ['$sce',
         function($sce) {
             /**

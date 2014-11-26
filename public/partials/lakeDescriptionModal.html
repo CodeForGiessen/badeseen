@@ -6,6 +6,20 @@
     <h3 class="modal-title">
         {{ data.name }}
     </h3>
+
+    <div class="lake-description">
+        {{ data.introtext }}
+    </div>
+
+    <div class="lake-temp">
+        <b> Wassertemperatur: </b>
+        {{ data.measurements[0].water_itemperature }} &deg;C
+    </div>
+
+    <divi class="lake-route">
+        <a ng-href="http://maps.google.com/maps?daddr={{data.lat}},{{data.lng}}{{hasGeolocation?'&saddr='+ userLat + ',' + userLng : '' }}" target="_">Routenplaner</a>
+    </div>
+
 </div>
 <div class="modal-body">
     <p ng-bind-html="data.description | trustHtml"></p>

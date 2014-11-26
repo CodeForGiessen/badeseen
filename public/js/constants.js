@@ -17,7 +17,7 @@ angular.module('badeseen.constants', [])
         'website': '',
         'mail': 'm.schaefer.mail+codeforgi@gmail.com'
     }, {
-        'name': 'Vincent Elliot Wagner',
+        'name': 'Vincent Elliott Wagner',
         'website': '',
         'mail': 'zockerticker+codeforgi@gmail.com'
     }, {

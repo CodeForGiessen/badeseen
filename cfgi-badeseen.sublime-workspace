@@ -1,0 +1,2065 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ol",
+				"oldLng"
+			],
+			[
+				"old",
+				"oldLat"
+			],
+			[
+				"ma",
+				"markers"
+			],
+			[
+				"Fetch",
+				"FetchLakeDataService (obj)"
+			],
+			[
+				"use",
+				"userLocation"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"wha",
+				"whatIs"
+			],
+			[
+				"bou",
+				"boundedFunc (fn)"
+			],
+			[
+				"wh",
+				"whatContext (fn)"
+			],
+			[
+				"my",
+				"myObject (obj)"
+			],
+			[
+				"cos",
+				"constant	Angular.js"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"say",
+				"sayhello (fn)"
+			],
+			[
+				"he",
+				"helloScope"
+			],
+			[
+				"asn",
+				"answerPost"
+			],
+			[
+				"an",
+				"answerPre"
+			],
+			[
+				"tba",
+				"tabId"
+			],
+			[
+				"tab",
+				"tabId"
+			],
+			[
+				"getWo",
+				"getWorkflowDate (fn)"
+			],
+			[
+				"div",
+				"divContent"
+			],
+			[
+				"Daet",
+				"Date (fn)"
+			],
+			[
+				"Da",
+				"Date (fn)"
+			],
+			[
+				"wo",
+				"workflow"
+			],
+			[
+				"JSON",
+				"JSON (obj)"
+			],
+			[
+				"stri",
+				"stringify($scope"
+			],
+			[
+				"ed",
+				"editorTabElem"
+			],
+			[
+				"put",
+				"putWorkflowBack"
+			],
+			[
+				"$s",
+				"$scope"
+			],
+			[
+				"wor",
+				"workflow"
+			],
+			[
+				"pu",
+				"putWorkflowBack"
+			],
+			[
+				"edi",
+				"editorTab"
+			],
+			[
+				"directi",
+				"directiveDefinitionObject"
+			],
+			[
+				"dir",
+				"directive	Angular.js"
+			],
+			[
+				"requ",
+				"requireEditor"
+			],
+			[
+				"iq",
+				"iqmNewWorkflowTab"
+			],
+			[
+				"tem",
+				"template"
+			],
+			[
+				"onA",
+				"onAddEditorTab (fn)"
+			],
+			[
+				"iqm",
+				"iqmTabs"
+			],
+			[
+				"close",
+				"closeTab"
+			],
+			[
+				"add",
+				"addTab"
+			],
+			[
+				"ne",
+				"nexttab"
+			],
+			[
+				"ev",
+				"event"
+			],
+			[
+				"sav",
+				"saveAll"
+			],
+			[
+				"$root",
+				"angular: $rootScope"
+			],
+			[
+				"work",
+				"workflowCopy"
+			],
+			[
+				"open",
+				"openWorkflow"
+			],
+			[
+				"ng-",
+				"ng-click	AngularJS"
+			],
+			[
+				"d",
+				"dirty (bool)"
+			],
+			[
+				"text",
+				"textView"
+			],
+			[
+				"undef",
+				"undefined"
+			],
+			[
+				"elem",
+				"element"
+			],
+			[
+				"hasO",
+				"hasOwnProperty (fn)"
+			],
+			[
+				"for",
+				"for	for (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"$c",
+				"$scope"
+			],
+			[
+				"em",
+				"emptyWorkflow (obj)"
+			],
+			[
+				"Work",
+				"Workflow"
+			],
+			[
+				"wok",
+				"workflow"
+			],
+			[
+				"cach",
+				"cachedWorkflow"
+			],
+			[
+				"cac",
+				"cachedWorkflow"
+			],
+			[
+				"a",
+				"$apply (fn)"
+			],
+			[
+				"WORK",
+				"WORKFLOW_COOKIE_KEY (str)"
+			],
+			[
+				"func",
+				"function"
+			],
+			[
+				"$cok",
+				"angular: $cookieStore"
+			],
+			[
+				"tex",
+				"textView (?)"
+			],
+			[
+				"ad",
+				"addEventListener"
+			],
+			[
+				"new",
+				"ngDir_iqmulus-new-workflow-tab	AngularJS"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"sho",
+				"shortDescription"
+			],
+			[
+				"val",
+				"validate"
+			],
+			[
+				"is",
+				"isDirty"
+			],
+			[
+				"ng-mous",
+				"ng-mouseover	AngularJS"
+			],
+			[
+				"ng-s",
+				"ng-show	AngularJS"
+			],
+			[
+				"ng-re",
+				"ng-repeat	AngularJS"
+			],
+			[
+				"w",
+				"workflow"
+			],
+			[
+				"par",
+				"parse (fn)"
+			],
+			[
+				"ng",
+				"ng-controller	AngularJS"
+			],
+			[
+				"side",
+				"sidebarWorkflowListCtrl"
+			],
+			[
+				"Side",
+				"SidebarWorkflowListCtrl	AngularJS"
+			],
+			[
+				"sid",
+				"sidebarWorkflowListCtrl"
+			],
+			[
+				"sideb",
+				"SidebarWorkflowListCtrl	AngularJS"
+			],
+			[
+				"ng-con",
+				"ng-controller=  (attribute)"
+			],
+			[
+				"str",
+				"strict"
+			],
+			[
+				"ng-ctr",
+				"ng-controller=  (attribute)"
+			],
+			[
+				"si",
+				"sidebarWorkflowListCtrl"
+			],
+			[
+				"date",
+				"dateModified"
+			],
+			[
+				"na",
+				"name"
+			],
+			[
+				"ng-cl",
+				"ng-click	AngularJS"
+			],
+			[
+				"sh",
+				"shortDescription"
+			],
+			[
+				"newWork",
+				"newWorkflowTabCtrl"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"newWo",
+				"newWorkflowTab"
+			],
+			[
+				"ng-new-workflow",
+				"ngDir_ng-new-workflow-tab	AngularJS"
+			],
+			[
+				"ng-new",
+				"ngDir_ng-new-workflow-tab	AngularJS"
+			],
+			[
+				"Wor",
+				"Workflow"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"hei",
+				"height"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"ba",
+				"background-color:   (property)"
+			],
+			[
+				"workflowH",
+				"workflowHttpService"
+			],
+			[
+				"$sco",
+				"$scope (obj)"
+			],
+			[
+				"getAc",
+				"getActionDescription (fn)"
+			],
+			[
+				"onCop",
+				"onCopy (fn)"
+			],
+			[
+				"onPa",
+				"onPaste (fn)"
+			],
+			[
+				"tet",
+				"textView (obj)"
+			],
+			[
+				"onC",
+				"onCut (fn)"
+			],
+			[
+				"onMode",
+				"onModelChanged (fn)"
+			],
+			[
+				"inv",
+				"invokeAction"
+			],
+			[
+				"edit",
+				"editor"
+			],
+			[
+				"mod",
+				"model (?)"
+			],
+			[
+				"caret",
+				"caretOffset"
+			],
+			[
+				"textV",
+				"textView (obj)"
+			],
+			[
+				"get",
+				"getEditorContent (fn)"
+			],
+			[
+				"s",
+				"setKeyBinding (?)"
+			],
+			[
+				"cu",
+				"currentScope (?)"
+			],
+			[
+				"Edi",
+				"editorService"
+			],
+			[
+				"menu",
+				"EditorMenuBarCtrl"
+			],
+			[
+				"con",
+				"controller (fn)"
+			],
+			[
+				"ke",
+				"keywordStyle (obj)"
+			],
+			[
+				"$sc",
+				"$scope	AngularJS"
+			],
+			[
+				"lo",
+				"local"
+			],
+			[
+				"ca",
+				"cat_title"
+			],
+			[
+				"def",
+				"defaultCat"
+			],
+			[
+				"backr",
+				"background-color:   (property)"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"over",
+				"overflow:   (property)"
+			],
+			[
+				"no",
+				"nowrap"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"pa",
+				"padding-top"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "public/js/constants.js",
+			"settings":
+			{
+				"buffer_size": 1370,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"selected_items":
+		[
+			[
+				"diff",
+				"Git: Diff Current File"
+			],
+			[
+				"fix",
+				"FixMyJS"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"gist",
+				"Gist: Insert Gist"
+			],
+			[
+				"gis",
+				"Gist: Update File"
+			],
+			[
+				"open ",
+				"Gist: Open Gist"
+			],
+			[
+				"open",
+				"Gist: Open Gist"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"pack in",
+				"Package Control: Install Package"
+			],
+			[
+				"sbt",
+				"SBT: Run"
+			],
+			[
+				"add",
+				"Git: Add Current File"
+			],
+			[
+				"histor",
+				"Git: Commit history"
+			],
+			[
+				"dif",
+				"Git: Diff Current File"
+			],
+			[
+				"git ad",
+				"Git: Add Current File"
+			],
+			[
+				"log",
+				"Git: Log Current File"
+			],
+			[
+				"git",
+				"Git: Add..."
+			],
+			[
+				"fixm",
+				"FixMyJS"
+			],
+			[
+				"bow",
+				"Bower: Install"
+			],
+			[
+				"bower",
+				"Bower: Install dependencies"
+			],
+			[
+				"disc",
+				"Bower: Discover packages"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"todo",
+				"TodoReview: Project and Open Files"
+			],
+			[
+				"fi",
+				"FixMyJS"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"compile",
+				"SBT: Compile"
+			],
+			[
+				"sbt r",
+				"SBT: Run"
+			],
+			[
+				"SBT",
+				"SBT: Run"
+			],
+			[
+				"run",
+				"SBT: Run"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"comp",
+				"SBT: Compile"
+			],
+			[
+				"comm",
+				"Git: Commit"
+			],
+			[
+				"reset",
+				"Git: Reset (unstage) Current File"
+			],
+			[
+				"my",
+				"FixMyJS"
+			],
+			[
+				"compi",
+				"SBT: Compile"
+			],
+			[
+				"js",
+				"FixMyJS"
+			],
+			[
+				"linter",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"compil",
+				"SBT: Compile"
+			],
+			[
+				"com",
+				"Git: Commit"
+			],
+			[
+				"comop",
+				"Package Control: Remove Package"
+			],
+			[
+				"git lo",
+				"Git: Log All"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"git l",
+				"Git: Log All"
+			],
+			[
+				":wq",
+				"BracketHighlighter: Swap Quotes"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"lis",
+				"Package Control: List Packages"
+			],
+			[
+				"set angu",
+				"Set Syntax: HTML (Angular.js)"
+			],
+			[
+				"Java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"angula",
+				"Set Syntax: HTML (Angular.js)"
+			],
+			[
+				"angul",
+				"AngularJS: Rebuild Search Index"
+			],
+			[
+				"angu",
+				"AngularJS: Delete Cache"
+			],
+			[
+				"typ",
+				"TypeScript: Display JavaScript"
+			],
+			[
+				"t",
+				"TypeScript: Check Syntax"
+			],
+			[
+				"type",
+				"TypeScript: Check Syntax"
+			],
+			[
+				"types",
+				"TypeScript: Check Syntax"
+			],
+			[
+				"displ",
+				"TypeScript: Display JavaScript"
+			],
+			[
+				"check",
+				"TypeScript: Check Syntax"
+			],
+			[
+				"tyo",
+				"TypeScript: Compile File"
+			],
+			[
+				"typs",
+				"TypeScript: Compile File"
+			],
+			[
+				"ty",
+				"TypeScript: Check Syntax"
+			],
+			[
+				"tyoe",
+				"TypeScript: Compile File"
+			],
+			[
+				"ad",
+				"Git: Add..."
+			],
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"che",
+				"Git: Checkout Current File"
+			],
+			[
+				"psu",
+				"Git: Push"
+			],
+			[
+				"lo",
+				"Git: Log All"
+			],
+			[
+				"pus",
+				"Git: Push"
+			],
+			[
+				"co",
+				"Git: Commit"
+			],
+			[
+				"git pu",
+				"Git: Pull"
+			],
+			[
+				"clea",
+				"LaTeXing: Clean up (Remove) all Nonessential Files"
+			],
+			[
+				"clean",
+				"LaTeXing: Clean up (Remove) all Nonessential Files"
+			],
+			[
+				"pull",
+				"Git: Pull"
+			],
+			[
+				"pul",
+				"Git: Pull"
+			],
+			[
+				"chek",
+				"Git: Checkout Current File"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"stat",
+				"Git: Status"
+			],
+			[
+				"chec",
+				"Git: Checkout Current File"
+			],
+			[
+				"ush",
+				"Permute Lines: Shuffle"
+			],
+			[
+				"psuh",
+				"Git: Push"
+			],
+			[
+				"commi",
+				"Git: Commit"
+			],
+			[
+				"tod",
+				"TodoReview: Project Files"
+			],
+			[
+				"to",
+				"TodoReview: Project and Open Files"
+			],
+			[
+				"c",
+				"Git: Commit"
+			],
+			[
+				"sta",
+				"Git: Stash Apply"
+			],
+			[
+				"escape",
+				"BracketHighlighter: Toggle String Bracket Escape Mode"
+			],
+			[
+				"escae",
+				"Convert Case: Swap Case"
+			],
+			[
+				"brack",
+				"BracketHighlighter: Match Brackets (ignore threshold)"
+			],
+			[
+				"flat",
+				"Preferences: LaTeXing Settings - Default"
+			],
+			[
+				"clen",
+				"LaTeXing: Clean up (Remove) all Nonessential Files"
+			],
+			[
+				"pusg",
+				"Git: Push Tags"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"lin",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"packe",
+				"Package Control: Disable Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"gutt",
+				"SublimeLinter: Choose Gutter Theme"
+			],
+			[
+				"lint",
+				"SublimeLinter: Choose Mark Style"
+			],
+			[
+				"vin",
+				"Vintageous: Reset"
+			],
+			[
+				"listpa",
+				"Package Control: List Packages"
+			],
+			[
+				"latexi",
+				"LaTeXing: Clean up (Remove) all Nonessential Files"
+			],
+			[
+				"latexing",
+				"LaTeXing: Clean up (Remove) all Nonessential Files"
+			],
+			[
+				"latex",
+				"LaTeXing: Clean Temporary Output Dictionary"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"sideb",
+				"Side Bar: Refresh"
+			],
+			[
+				"linte",
+				"SublimeLinter: Choose Lint Mode"
+			],
+			[
+				"packli",
+				"Package Control: List Packages"
+			],
+			[
+				"form",
+				"Format Code"
+			],
+			[
+				"cle",
+				"LaTeXing: Clean up (Remove) all Nonessential Files"
+			],
+			[
+				"cache",
+				"LaTeXing: Rebuild Cache (Hard)"
+			],
+			[
+				"late",
+				"LaTeXing: Clean Temporary Output Dictionary"
+			],
+			[
+				"Build: ",
+				"Build: Clean up Files"
+			],
+			[
+				"up",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"la",
+				"LaTeXing: Check System"
+			],
+			[
+				"upg",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"upd",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"vinatge",
+				"Vintageous: Toggle Vim Ctrl Keys"
+			],
+			[
+				"upda",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"vinta",
+				"Vintageous: Run Tests..."
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 610.0
+	},
+	"console":
+	{
+		"height": 387.0,
+		"history":
+		[
+			"sublime.log_commands(True)",
+			"view.settings().get('font_face')",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/msfr/Develop/projects-dev/cfgi/badeseen",
+		"/Users/msfr/Develop/projects-dev/cfgi/badeseen/public",
+		"/Users/msfr/Develop/projects-dev/cfgi/badeseen/public/data",
+		"/Users/msfr/Develop/projects-dev/cfgi/badeseen/public/js",
+		"/Users/msfr/Develop/projects-dev/cfgi/badeseen/public/partials"
+	],
+	"file_history":
+	[
+		"/Users/msfr/Develop/projects-dev/cfgi/badeseen/public/data/badeseen.json",
+		"/Users/msfr/Develop/projects-dev/cfgi/badeseen/index.html",
+		"/Users/msfr/Develop/projects-dev/cfgi/badeseen/public/js/controllers.js",
+		"/Users/msfr/Develop/projects-dev/cfgi/badeseen/public/js/app.js",
+		"/Users/msfr/Develop/projects-dev/cfgi/badeseen/public/partials/faq.html",
+		"/Users/msfr/Develop/projects-dev/cfgi/badeseen/public/js/constants.js"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"<project>",
+			"/Users/msfr/Develop/projects-dev/fraunhofer/workflow-service",
+			"<project>",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/com_jevents",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/jcomments",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/jcomments",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/jcomments/rmh",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/com_jevents",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/jcomments/rmh",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/com_jevents/views/rmh",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/mod_jeventsrmh",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/tmpl_rmh/regionmittelhessen",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/tmpl_rmh",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/jcomments",
+			"<project>",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/tmpl_rmh/regionmittelhessen/html/com_jevents",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/jcomments",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/com_jevents",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/tmpl_rmh/regionmittelhessen/html/com_jevents",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/com_jevents/views/rmh",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/jcomments",
+			"<project>",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/jcomments",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/jcomments/rmh",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/tmpl_rmh/regionmittelhessen",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/jcomments/rmh",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/jcomments",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/jcomments/rmh",
+			"/Users/msfr/Develop/servers/mamp-stack/apps/joomla/htdocs/components/com_jcomments",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/jcomments/rmh",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement",
+			"/Users/msfr/Develop/servers/mamp-stack/apps/joomla/htdocs/components/com_jcomments",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/jcomments/rmh",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/jcomments",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/jcomments/rmh",
+			"/Users/msfr/Develop/servers/mamp-stack/apps/joomla/htdocs/components/com_jevents",
+			"<project>",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/com_jevents/views/rmh",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/com_jevents",
+			"",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/com_jevents/views/rmh",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/com_jevents/views/geraint2",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/com_jevents",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/com_jevents/views/geraint2",
+			"/Users/msfr/Develop/projects-dev/Regionalmanagement/com_jevents/views/rmh_geraint",
+			"/Users/msfr/Documents/studium/bsc/07Semester/thesis/tex/images"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"mrkrs",
+			"badese",
+			"leaflet-directive",
+			"markers",
+			"leaflet",
+			"latitude",
+			"lakeDataProvider",
+			"getLakeLocationMarkers",
+			"<ul class=\"nav nav-{{type || 'tabs'}}",
+			"new_i",
+			"==",
+			" ==",
+			"what",
+			"x",
+			"    ",
+			"​function",
+			"h3",
+			"closeTab()",
+			"onAddNewWorkflowTab",
+			"date",
+			"workflowName",
+			"iqm-editor-tabs",
+			"tab",
+			"onSave",
+			"promise",
+			"workflow",
+			"Workflow",
+			"workflow",
+			"Workflow",
+			"workflow",
+			"Workflow",
+			"workflow",
+			"Workflow",
+			"undefined",
+			"getSource",
+			"undefined",
+			"cacheWorkflow",
+			"type: \"",
+			"modelChanged",
+			"modelChangedEvent",
+			"onModelChanged",
+			"onModel",
+			"dirty",
+			"ng-model",
+			"font",
+			"save",
+			"dirty",
+			"el",
+			"tabs",
+			"workflow",
+			"passive_warnings",
+			"warnings",
+			"passive_warnings",
+			"WorkflowStyler",
+			"jshint",
+			"vince",
+			" <!--",
+			"getCreatorid",
+			"buildWorkflowObject",
+			"\n-",
+			"workflow",
+			"//",
+			"var",
+			"post",
+			"navbar",
+			"http",
+			"getAttributePublic",
+			"git",
+			"reset",
+			"_doContent",
+			"paste",
+			"Spacegray",
+			"tv",
+			"getEditorContent",
+			"button",
+			"navbar-btn",
+			"navbar",
+			"navba",
+			"onSave",
+			"styler",
+			"WorkflowStyler",
+			"workflowStyler",
+			"edit",
+			"getEditor",
+			"bower",
+			"render",
+			"sidebar",
+			"workflow",
+			"Workflow",
+			"workflow",
+			"Workflow",
+			"workflow",
+			"Workflow",
+			"render",
+			"      ",
+			"WorkflowStyler",
+			"workflowStyler",
+			"WorkflowStyler",
+			"styler",
+			"WorkflowStyler",
+			"workflowStyler",
+			"$scope.apply",
+			"\"auto_complete_triggers",
+			"auto_complete_selector",
+			"jcomments.saveComment()",
+			"contentheading",
+			"-2",
+			"calendar-heading",
+			"cal_td_today",
+			"query",
+			"size",
+			"jeventpage",
+			"contentpaneopen",
+			"heig",
+			"heigm",
+			"heig",
+			"14",
+			"contentpaneopen",
+			"cellclass",
+			"noevents",
+			"cal_td_daysnoevents",
+			"cal_td_to",
+			"today",
+			"80",
+			"hei",
+			"daysn",
+			"14",
+			"today"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"lat",
+			"$tmp_start_time",
+			"$activeMenuParentName",
+			"col-xs",
+			".nav-main",
+			".nav-toolbar",
+			".menu-left",
+			"container",
+			"joomla-rmh",
+			"$formattedDate",
+			"date_format",
+			"string_weeks",
+			"string_week",
+			"string_days",
+			"string_yesterday",
+			"string_today",
+			"Rmh",
+			"rmh",
+			"JEventsgeraintView",
+			"geraint2",
+			"rmh_geraint",
+			"null",
+			"\\subsection*",
+			"so dass",
+			"Android-Plattform",
+			"LibGDX"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "public/js/constants.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1370,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 249.0
+	},
+	"output.sbt":
+	{
+		"height": 0.0
+	},
+	"output.sbt_error":
+	{
+		"height": 0.0
+	},
+	"project": "cfgi-badeseen.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"const",
+				"public/js/constants.js"
+			],
+			[
+				"bades",
+				"public/data/badeseen.json"
+			],
+			[
+				"in",
+				"index.html"
+			],
+			[
+				"workflowmo",
+				"app/assets/javascripts/services/workflowModel.js"
+			],
+			[
+				"main",
+				"app/views/main.scala.html"
+			],
+			[
+				"ma",
+				"app/views/main.scala.html"
+			],
+			[
+				"editctr",
+				"app/assets/javascripts/controllers/editorTabCtrl.js"
+			],
+			[
+				"workctr",
+				"app/assets/javascripts/controllers/workflowEditorCtrl.js"
+			],
+			[
+				"iqm",
+				"app/assets/javascripts/directives/iqmTabs.js"
+			],
+			[
+				"worctr",
+				"app/assets/javascripts/controllers/workflowEditorCtrl.js"
+			],
+			[
+				"edit",
+				"app/views/edit.scala.html"
+			],
+			[
+				"hel",
+				"app/assets/javascripts/directives/helloWorld.js"
+			],
+			[
+				"edi",
+				"app/views/edit.scala.html"
+			],
+			[
+				"editor",
+				"app/assets/javascripts/controllers/editorTabCtrl.js"
+			],
+			[
+				"app.j",
+				"app/assets/javascripts/workflowEditorApp.js"
+			],
+			[
+				"menu",
+				"app/assets/javascripts/controllers/editorMenuBarCtrl.js"
+			],
+			[
+				"editct",
+				"app/assets/javascripts/controllers/editorTabCtrl.js"
+			],
+			[
+				"worm",
+				"app/assets/javascripts/services/workflowModel.js"
+			],
+			[
+				"wor",
+				"app/assets/javascripts/services/workflow.js"
+			],
+			[
+				"rout",
+				"conf/routes"
+			],
+			[
+				"work.j",
+				"app/assets/javascripts/services/workflow.js"
+			],
+			[
+				"tabc",
+				"app/assets/javascripts/controllers/editorTabCtrl.js"
+			],
+			[
+				"bowe",
+				"bower.json"
+			],
+			[
+				"bower",
+				"bower.json"
+			],
+			[
+				"edita",
+				"app/assets/javascripts/controllers/editorTabCtrl.js"
+			],
+			[
+				"mai",
+				"app/views/main.scala.html"
+			],
+			[
+				"work.sc",
+				"app/models/Workflow.scala"
+			],
+			[
+				"dao",
+				"app/models/WorkflowDAO.scala"
+			],
+			[
+				"worea",
+				"app/assets/javascripts/workflowEditorApp.js"
+			],
+			[
+				"workpo",
+				"app/assets/javascripts/directives/workflowPopover.js"
+			],
+			[
+				"new",
+				"app/assets/javascripts/directives/newWorkflowTab.js"
+			],
+			[
+				"main.c",
+				"public/stylesheets/main.css"
+			],
+			[
+				"woea",
+				"app/assets/javascripts/workflowEditorApp.js"
+			],
+			[
+				"editt",
+				"app/assets/javascripts/controllers/editorTabCtrl.js"
+			],
+			[
+				"edit.s",
+				"app/views/edit.scala.html"
+			],
+			[
+				"work.js",
+				"app/assets/javascripts/services/workflow.js"
+			],
+			[
+				"edictr",
+				"app/assets/javascripts/controllers/editorTabCtrl.js"
+			],
+			[
+				"wor.j",
+				"app/assets/javascripts/services/workflow.js"
+			],
+			[
+				"work.s",
+				"app/models/Workflow.scala"
+			],
+			[
+				"edit.",
+				"app/views/edit.scala.html"
+			],
+			[
+				"rou",
+				"conf/routes"
+			],
+			[
+				"maim",
+				"app/views/main.scala.html"
+			],
+			[
+				"workflow",
+				"app/assets/javascripts/services/workflow.js"
+			],
+			[
+				"routes",
+				"conf/routes"
+			],
+			[
+				"https",
+				"app/assets/javascripts/services/workflowHttpService.js"
+			],
+			[
+				"tabs",
+				"app/assets/javascripts/services/tabService.js"
+			],
+			[
+				"ed",
+				"app/views/edit.scala.html"
+			],
+			[
+				"mennub",
+				"target/web/public/main/javascripts/controllers/editorMenuBarCtrl.js"
+			],
+			[
+				"mai.s",
+				"app/views/main.scala.html"
+			],
+			[
+				"route",
+				"conf/routes"
+			],
+			[
+				".css",
+				"public/stylesheets/main.css"
+			],
+			[
+				"css",
+				"public/bower_components/jquery/src/css.js"
+			],
+			[
+				"workflowc",
+				"app/controllers/WorkflowController.scala"
+			],
+			[
+				"ctrl",
+				"app/assets/javascripts/controllers/editorTabCtrl.js"
+			],
+			[
+				"main.",
+				"public/stylesheets/main.css"
+			],
+			[
+				"main.s",
+				"app/views/main.scala.html"
+			],
+			[
+				"sid",
+				"app/views/sidebar.scala.html"
+			],
+			[
+				"side",
+				"app/views/sidebar.scala.html"
+			],
+			[
+				"tab",
+				"app/assets/javascripts/tabService.js"
+			],
+			[
+				"te",
+				"tmpl_rmh/regionmittelhessen/css/template.css"
+			],
+			[
+				"inde",
+				"tmpl_rmh/regionmittelhessen/index.php"
+			],
+			[
+				"tpl_f",
+				"jcomments/rmh/tpl_form.php"
+			],
+			[
+				"ind.p",
+				"tmpl_rmh/regionmittelhessen/index.php"
+			],
+			[
+				"tem.cs",
+				"tmpl_rmh/regionmittelhessen/css/template.css"
+			],
+			[
+				"ind",
+				"tmpl_rmh/regionmittelhessen/index.php"
+			],
+			[
+				"inde.p",
+				"tmpl_rmh/regionmittelhessen/index.php"
+			],
+			[
+				"ond.ph",
+				"lib_solarium/lib_solarium/solarium/solarium/library/Solarium/QueryType/Update/Query/Command/Command.php"
+			],
+			[
+				"tem.c",
+				"tmpl_rmh/regionmittelhessen/css/template.css"
+			],
+			[
+				"tem",
+				"tmpl_rmh/regionmittelhessen/css/template.css"
+			],
+			[
+				"tempp.",
+				"lib_gmap/lib_gmap/models/Template.php"
+			],
+			[
+				"ind.php",
+				"tmpl_rmh/regionmittelhessen/index.php"
+			],
+			[
+				"sty",
+				"jcomments/rmh/style.css"
+			],
+			[
+				"eve.cs",
+				"com_jevents/views/rmh/assets/css/events_css.css"
+			],
+			[
+				"sty.c",
+				"jcomments/rmh/style.css"
+			],
+			[
+				"form",
+				"jcomments/rmh/tpl_form.php"
+			],
+			[
+				"_form",
+				"jcomments/rmh/tpl_form.php"
+			],
+			[
+				"temp",
+				"tmpl_rmh/regionmittelhessen/css/template.css"
+			],
+			[
+				"tpl",
+				"jcomments/rmh/tpl_form.php"
+			],
+			[
+				"index.p",
+				"tmpl_rmh/regionmittelhessen/index.php"
+			],
+			[
+				"en-g",
+				"jcomments/en-GB.com_jcomments.ini"
+			],
+			[
+				"inde.",
+				"tmpl_rmh/regionmittelhessen/index.php"
+			],
+			[
+				"tem.p",
+				"tmpl_rmh/regionmittelhessen/css/template.css"
+			],
+			[
+				"en-reg",
+				"tmpl_rmh/regionmittelhessen/language/en-GB/en-GB.tpl_region-mittelhessen.ini"
+			],
+			[
+				"ted",
+				"tmpl_rmh/regionmittelhessen/templateDetails.xml"
+			],
+			[
+				"temp.x",
+				"com_gmapadmin/com_gmapadmin/admin/views/template/index.html"
+			],
+			[
+				"index.",
+				"tmpl_rmh/region-mittelhessen/index.php"
+			],
+			[
+				"templ.c",
+				"tmpl_rmh/region-mittelhessen/css/template.css"
+			],
+			[
+				"index",
+				"tmpl_rmh/region-mittelhessen/index.php"
+			],
+			[
+				"abou",
+				"tmpl_rmh/region-mittelhessen/html/aboutUs.php"
+			],
+			[
+				"blo",
+				"tmpl_rmh/region-mittelhessen/html/com_content/category/blog.php"
+			],
+			[
+				"lan.p",
+				"tmpl_rmh/region-mittelhessen/html/landing-page.php"
+			],
+			[
+				"temp.c",
+				"tmpl_rmh/region-mittelhessen/css/template.css"
+			],
+			[
+				"markerty",
+				"lib_gmap/lib_gmap/models/MarkerTypeDAO.php"
+			],
+			[
+				"faz.t",
+				"chapters/fazit.tex"
+			],
+			[
+				"fazi.t",
+				"chapters/fazit.aux"
+			],
+			[
+				"im.t",
+				"chapters/implementierung.tex"
+			],
+			[
+				"ent",
+				"chapters/entwurf.tex"
+			],
+			[
+				"mach.t",
+				"chapters/machbarkeitsanalyse.tex"
+			],
+			[
+				"gl",
+				"chapters/glossar.tex"
+			],
+			[
+				"ana.t",
+				"chapters/anhang.tex"
+			],
+			[
+				"imp.t",
+				"chapters/implementierung.tex"
+			],
+			[
+				"entw.t",
+				"chapters/entwurf.tex"
+			],
+			[
+				"ma.t",
+				"chapters/machbarkeitsanalyse.tex"
+			],
+			[
+				"pro.t",
+				"chapters/projekt.tex"
+			],
+			[
+				"gr",
+				"chapters/grundlagen.tex"
+			],
+			[
+				"ein",
+				"chapters/einfuehrung.tex"
+			],
+			[
+				"ti",
+				"chapters/titelseite.tex"
+			],
+			[
+				"eide.t",
+				"chapters/eideststatt.tex"
+			],
+			[
+				"ab",
+				"chapters/abk_verz.tex"
+			],
+			[
+				"impl",
+				"chapters/implementierung.tex"
+			],
+			[
+				"en.t",
+				"chapters/entwurf.tex"
+			],
+			[
+				"impl.t",
+				"chapters/implementierung.tex"
+			],
+			[
+				"gru.t",
+				"chapters/grundlagen.tex"
+			],
+			[
+				"bi",
+				"biblio.bib"
+			],
+			[
+				"fa.t",
+				"chapters/fazit.tex"
+			],
+			[
+				"grun.t",
+				"chapters/grundlagen.tex"
+			],
+			[
+				"abk.t",
+				"chapters/abk_verz.tex"
+			],
+			[
+				"abk.te",
+				"chapters/abk_verz.tex"
+			],
+			[
+				"enr",
+				"chapters/entwurf.tex"
+			],
+			[
+				"ent.t",
+				"chapters/entwurf.tex"
+			],
+			[
+				"mac.t",
+				"chapters/machbarkeitsanalyse.tex"
+			],
+			[
+				"glo",
+				"chapters/glossar.tex"
+			],
+			[
+				"gru.te",
+				"chapters/grundlagen.tex"
+			],
+			[
+				"gr.t",
+				"chapters/grundlagen.tex"
+			],
+			[
+				"pr.t",
+				"chapters/projekt.tex"
+			],
+			[
+				"pro",
+				"chapters/projekt.tex"
+			],
+			[
+				"mch.t",
+				"chapters/machbarkeitsanalyse.tex"
+			],
+			[
+				"pr",
+				"chapters/projekt.tex"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/Develop/projects-dev/cfgi/badeseen/cfgi-badeseen.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 400.0,
+		"selected_items":
+		[
+			[
+				"",
+				"# Use with ANSI-colors"
+			],
+			[
+				"yell",
+				"yellow"
+			],
+			[
+				"JeventsRM",
+				"JEventsRmhView"
+			],
+			[
+				"header",
+				"header"
+			],
+			[
+				"lebens",
+				"\\subsubsection*{Lebenszyklus}"
+			],
+			[
+				"mach",
+				"Section » Machbarkeitsanalyse durch Implementierung eines Prototypen auf Basis des LibGDX Frameworks"
+			],
+			[
+				"macg",
+				"Section » Machbarkeitsanalyse durch Implementierung eines Prototypen auf Basis des LibGDX Frameworks"
+			],
+			[
+				"libgdx",
+				"\\subsection*{LibGDX Anwendungen}"
+			],
+			[
+				"machba",
+				"Section » Machbarkeitsanalyse durch Implementierung eines Prototypen auf Basis des LibGDX Frameworks"
+			],
+			[
+				"mac",
+				"Include » ./chapters/machbarkeitsanalyse"
+			],
+			[
+				"LibGDX",
+				"Chapter » Evaluierung der Umsetzbarkeit mittels des LibGDX Frameworks"
+			],
+			[
+				"anfo",
+				"Section » Anforderungen"
+			],
+			[
+				"fft",
+				"Subsection » Auswahl/Filtern des gesuchten Frequenzbereiches, \\textit{Element  C,D,E}"
+			],
+			[
+				"anf",
+				"Section » Anforderungen"
+			]
+		],
+		"width": 400.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 197.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

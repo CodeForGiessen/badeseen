@@ -57,6 +57,11 @@ h4 {
     list-style-type: none;
     display: inline-block; }
 
+.lake-list-description {
+  float: right;
+  color: #428BCA;
+}
+
 /**
  * Map
  */
@@ -69,6 +74,21 @@ h4 {
  */
 .modal-body article + article {
   margin-top: 1.5em; }
+
+.lake-description {
+  margin-top: 10px;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.lake-temp {
+  margin-top: 10px;
+}
+
+.lake-route {
+  margin-top: 10px;
+}
+
 
 /**
  * Footer

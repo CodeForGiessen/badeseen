@@ -17,12 +17,13 @@ angular.module('badeseen.controllers', ['leaflet-directive'])
     '$scope', 'UserLocationService', 'LatLngDistanceService', 'FetchLakeDataService',
     function($scope, UserLocationService, LatLngDistanceService, FetchLakeDataService) {
         /* Controller for the lake list */
+
+        $scope.order = 'name';
+
         var lakeList = {};
 
         /* jshint unused:false */
         FetchLakeDataService.fetch().success(function(data) {
-
-            console.log(data);
 
             var userLocation = UserLocationService.getUserLocation().then(function success(userPos) {
 
@@ -45,20 +46,24 @@ angular.module('badeseen.controllers', ['leaflet-directive'])
 
                 });
 
-                lakeListWithDistance.sort(function compare(a, b) {
-                   console.log (a.distance - b.distance);
-                   return a.distance - b.distance;
-                });
-
+                $scope.order = 'distance';
                 $scope.lakeList = lakeListWithDistance;
 
             }, function error() {
-                $scope.lakeList = lakeList; // no distance nor locations
+                $scope.order = 'name';
+                $scope.lakeList = data; // no distance nor locations
             });
         });
     }])
     .controller('MapTabCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'UserLocationService', 'FetchLakeDataService', 'MAP_CENTER',
         function($scope, $modal, leafletData, leafletEvents, UserLocationService, FetchLakeDataService, MAP_CENTER) {
+
+            this.hasGeolocation = false;
+            this.userLat = 0;
+            this.userLng = 0;
+
+            var that = this;
+
             /* Controller for the lake map providing an overview */
             angular.extend($scope, {
                 center: MAP_CENTER,
@@ -73,30 +78,35 @@ angular.module('badeseen.controllers', ['leaflet-directive'])
                 }
             });
 
-            (function() {
-                FetchLakeDataService.fetch().success(function(data) {
+            FetchLakeDataService.fetch().success(function(data) {
+                var _markers = data.map(function(item) {
+                    var oldLat = item.latitude;
+                    var oldLng = item.longitude;
 
-                    var _markers = data.map(function(item) {
-                        var oldLat = item.latitude;
-                        var oldLng = item.longitude;
+                    delete item.longitude;
+                    delete item.latitude;
 
-                        delete item.longitude;
-                        delete item.latitude;
+                    item.lat = parseFloat(oldLat);
+                    item.lng = parseFloat(oldLng);
+                    item.icon = getMarkerIcon(item.measurements[0].water_itemperature);
 
-                        item.lat = parseFloat(oldLat);
-                        item.lng = parseFloat(oldLng);
-
-                        return item;
-                    });
-
-                    angular.extend($scope, {
-                        markers: _markers
-                    }
-                    );
+                    return item;
                 });
-            })();
 
-            // $scope.addMarkers();
+                angular.extend($scope, {
+                    markers: _markers
+                });
+            });
+
+            var getMarkerIcon = function(temperature) {
+                if(temperature < 15 ) {
+                    return {'iconUrl': 'public/img/marker_red.png'};
+                } else if(temperature >=15 && temperature < 20) {
+                    return {'iconUrl': 'public/img/marker_orange.png'};
+                } else {
+                    return {'iconUrl': 'public/img/marker_green.png'};
+                }
+            };
 
             var userLocationMarkerIcon = {
                 'iconUrl': 'public/img/marker-red.png',
@@ -106,39 +116,23 @@ angular.module('badeseen.controllers', ['leaflet-directive'])
                 'popupAnchor': [0, -39]
             };
 
-            /* jshint unused:false */
-            var userLocation = UserLocationService.getUserLocation()
-                .then(function success(res) {
-                    $scope.markers.userLocationMarker = {
-                        'lat': res.lat,
-                        'lng': res.lng,
-                        'icon': userLocationMarkerIcon,
-                        'message': 'Aktueller Standpunkt'
-                    };
-                });
+            UserLocationService.getUserLocation().then(function success(res) {
 
-                // (function() {
-                //     UserLocationService.getUserLocation()
-                //     .then(function success(res) {
+                var _userLocationMarker = {
+                    'lat': res.lat,
+                    'lng': res.lng,
+                    'icon': userLocationMarkerIcon,
+                    'message': 'Aktueller Standpunkt'
+                };
 
-                //         var _userLocationMarker = {
-                //             'lat': res.lat,
-                //             'lng': res.lng,
-                //             'icon': userLocationMarkerIcon,
-                //             'message': 'Aktueller Standpunkt'
-                //         };
+                $scope.markers.push(_userLocationMarker);
+                that.hasGeolocation = true;
+                that.userLat = res.lat;
+                that.userLng = res.lng;
 
-                //         console.log(_userLocationMarker);
-
-                //         $scope.markers.userLocationMarker = _userLocationMarker;
-
-                //     // angular.extend($scope, {
-                //     //     userLocationMarker: _userLocationMarker
-                //     // });
-
-                //     console.log($scope);
-                // });
-                // })();
+            }, function() {
+                console.log('error');
+            });
 
             $scope.$on('leafletDirectiveMarker.click', function(event, leafletEvent) {
                 if (leafletEvent.markerName !== 'userLocationMarker') {
@@ -148,8 +142,14 @@ angular.module('badeseen.controllers', ['leaflet-directive'])
                         'templateUrl': 'public/partials/lakeDescriptionModal.html',
                         'resolve': {
                             'data': function() {
-                                console.log($scope.markers[leafletEvent.markerName].data);
-                                return $scope.markers[leafletEvent.markerName].data;
+                                return $scope.markers[leafletEvent.markerName];
+                            },
+                            'userGeoLoc': function() {
+                                return {
+                                    'hasGeolocation': that.hasGeolocation,
+                                    'userLat': that.userLat,
+                                    'userLng': that.userLng
+                                };
                             }
                         }
                     });
@@ -202,9 +202,15 @@ angular.module('badeseen.controllers', ['leaflet-directive'])
             };
         }
     ])
-    .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'data',
-        function($scope, $modalInstance, data) {
+    .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'data', 'userGeoLoc',
+        function($scope, $modalInstance, data, userGeoLoc) {
             $scope.data = data;
+            if(userGeoLoc.hasGeolocation) {
+                $scope.hasGeolocation = userGeoLoc.hasGeolocation;
+                $scope.userLat = userGeoLoc.userLat;
+                $scope.userLng = userGeoLoc.userLng;
+            }
+            console.log(data);
             $scope.dismiss = function() {
                 $modalInstance.dismiss();
             };

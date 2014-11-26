@@ -1,12 +1,12 @@
 <accordion close-others="true">
-    <accordion-group ng-repeat="lake in lakeList">
+    <accordion-group ng-repeat="lake in lakeList | orderBy : order">
         <accordion-heading>
             <!--
                 distance span is hidden when there is no distance. but when there is,
                 it gets rounded to 2 decimal places
             -->
             {{ lake.name }}
-            <span ng-show="lake.distance">({{ lake.distance | number:2 }}km entfernt)</span>
+            <span class="lake-list-description" ng-show="lake.distance">({{ lake.distance | number:2 }}km entfernt)</span>
         </accordion-heading>
         <div class="highlight pull-right" ng-show="lake.attributes">
             <ul class="lakeAttributes">

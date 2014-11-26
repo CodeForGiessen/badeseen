@@ -79,7 +79,10 @@ angular.module('badeseen.controllers', ['leaflet-directive'])
             });
 
             FetchLakeDataService.fetch().success(function(data) {
-                var _markers = data.map(function(item) {
+                var _markers = {};
+
+                data.forEach(function(item, index) {
+
                     var oldLat = item.latitude;
                     var oldLng = item.longitude;
 
@@ -90,7 +93,7 @@ angular.module('badeseen.controllers', ['leaflet-directive'])
                     item.lng = parseFloat(oldLng);
                     item.icon = getMarkerIcon(item.measurements[0].water_itemperature);
 
-                    return item;
+                    _markers[index.toString()] = item;
                 });
 
                 angular.extend($scope, {
@@ -99,20 +102,27 @@ angular.module('badeseen.controllers', ['leaflet-directive'])
             });
 
             var getMarkerIcon = function(temperature) {
+                var marker = {
+                    'shadowUrl': 'public/img/marker-shadow.png',
+                    'iconSize': [42, 42],
+                    'shadowSize': [42, 42],
+                    'popupAnchor': [0, -39]
+                };
                 if(temperature < 15 ) {
-                    return {'iconUrl': 'public/img/marker_red.png'};
+                    marker.iconUrl = 'public/img/marker_red.png';
                 } else if(temperature >=15 && temperature < 20) {
-                    return {'iconUrl': 'public/img/marker_orange.png'};
+                    marker.iconUrl = 'public/img/marker_orange.png';
                 } else {
-                    return {'iconUrl': 'public/img/marker_green.png'};
+                    marker.iconUrl = 'public/img/marker_green.png';
                 }
+                return marker;
             };
 
             var userLocationMarkerIcon = {
-                'iconUrl': 'public/img/marker-red.png',
+                'iconUrl': 'public/img/home.png',
                 'shadowUrl': 'public/img/marker-shadow.png',
-                'iconSize': [25, 41],
-                'shadowSize': [41, 41],
+                'iconSize': [42, 42],
+                'shadowSize': [42, 42],
                 'popupAnchor': [0, -39]
             };
 
@@ -122,10 +132,11 @@ angular.module('badeseen.controllers', ['leaflet-directive'])
                     'lat': res.lat,
                     'lng': res.lng,
                     'icon': userLocationMarkerIcon,
-                    'message': 'Aktueller Standpunkt'
+                    'message': 'Aktueller Standpunkt',
+                    'markerName': 'home'
                 };
 
-                $scope.markers.push(_userLocationMarker);
+                $scope.markers.userLocationMarker = _userLocationMarker;
                 that.hasGeolocation = true;
                 that.userLat = res.lat;
                 that.userLng = res.lng;
@@ -210,7 +221,6 @@ angular.module('badeseen.controllers', ['leaflet-directive'])
                 $scope.userLat = userGeoLoc.userLat;
                 $scope.userLng = userGeoLoc.userLng;
             }
-            console.log(data);
             $scope.dismiss = function() {
                 $modalInstance.dismiss();
             };

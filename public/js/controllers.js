@@ -14,25 +14,49 @@ angular.module('badeseen.controllers', ['leaflet-directive'])
         }
     ])
     .controller('LakeListTabCtrl', [
-        '$scope', 'UserLocationService', 'LatLngDistanceService', 'FetchLakeDataService',
-        function($scope, UserLocationService, LatLngDistanceService, FetchLakeDataService) {
-            /* Controller for the lake list */
-            var lakeList = {};
+    '$scope', 'UserLocationService', 'LatLngDistanceService', 'FetchLakeDataService',
+    function($scope, UserLocationService, LatLngDistanceService, FetchLakeDataService) {
+        /* Controller for the lake list */
+        var lakeList = {};
 
-            /* jshint unused:false */
-            FetchLakeDataService.fetch().success(function(data) {
-                var lakeListWithDistance = data.map(function(lake) {
+        /* jshint unused:false */
+        FetchLakeDataService.fetch().success(function(data) {
+
+            console.log(data);
+
+            var userLocation = UserLocationService.getUserLocation().then(function success(userPos) {
+
+                var lakeListWithDistance = data.map(function(lake, index) {
+
+                    // distance calculated by long/lat in meters
+                    var lakePos = {
+                        'latitude': lake.latitude,
+                        'longitude': lake.longitude
+                    };
+
+                    var distance = LatLngDistanceService.distanceTo(userPos, lakePos);
+
                     return {
                         'name': lake.name,
-                        'description': lake.introtext,
-                        'attributes': {},
-                        'distance': 0
+                        'description': lake.description,
+                        'attributes': lake.attributes,
+                        'distance': distance / 1000
                     };
+
                 });
+
+                lakeListWithDistance.sort(function compare(a, b) {
+                   console.log (a.distance - b.distance);
+                   return a.distance - b.distance;
+                });
+
                 $scope.lakeList = lakeListWithDistance;
+
+            }, function error() {
+                $scope.lakeList = lakeList; // no distance nor locations
             });
-        }
-    ])
+        });
+    }])
     .controller('MapTabCtrl', ['$scope', '$modal', 'leafletData', 'leafletEvents', 'UserLocationService', 'FetchLakeDataService', 'MAP_CENTER',
         function($scope, $modal, leafletData, leafletEvents, UserLocationService, FetchLakeDataService, MAP_CENTER) {
             /* Controller for the lake map providing an overview */
@@ -92,6 +116,29 @@ angular.module('badeseen.controllers', ['leaflet-directive'])
                         'message': 'Aktueller Standpunkt'
                     };
                 });
+
+                // (function() {
+                //     UserLocationService.getUserLocation()
+                //     .then(function success(res) {
+
+                //         var _userLocationMarker = {
+                //             'lat': res.lat,
+                //             'lng': res.lng,
+                //             'icon': userLocationMarkerIcon,
+                //             'message': 'Aktueller Standpunkt'
+                //         };
+
+                //         console.log(_userLocationMarker);
+
+                //         $scope.markers.userLocationMarker = _userLocationMarker;
+
+                //     // angular.extend($scope, {
+                //     //     userLocationMarker: _userLocationMarker
+                //     // });
+
+                //     console.log($scope);
+                // });
+                // })();
 
             $scope.$on('leafletDirectiveMarker.click', function(event, leafletEvent) {
                 if (leafletEvent.markerName !== 'userLocationMarker') {

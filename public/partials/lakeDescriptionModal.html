@@ -6,26 +6,18 @@
     <h3 class="modal-title">
         {{ data.name }}
     </h3>
-
-    <div class="lake-description">
-        {{ data.introtext }}
-    </div>
-
-    <div class="lake-temp">
-        <b> Wassertemperatur: </b>
-        {{ data.measurements[0].water_itemperature }} &deg;C
-    </div>
-
-    <divi class="lake-route">
-        <a ng-href="http://maps.google.com/maps?daddr={{data.lat}},{{data.lng}}{{hasGeolocation?'&saddr='+ userLat + ',' + userLng : '' }}" target="_">Routenplaner</a>
-    </div>
-
 </div>
 <div class="modal-body">
-    <p ng-bind-html="data.description | trustHtml"></p>
+    <div ng-bind-html="data.introtext | trustHtml" class="lake-text col-md-10"></div>
+    <div class="lake-temp col-md-2" ng-class="currentWaterTemperatureClass" >{{currentWaterTemperature}}</div>
+    <div style="clear:both;"></div>
+    <div class="lake-route col-md-12">
+        <a ng-href="http://maps.google.com/maps?daddr={{data.lat}},{{data.lng}}{{hasGeolocation?'&saddr='+ userLat + ',' + userLng : '' }}" target="_"><i class="fa fa-car"></i> Routenplaner</a>
+    </div>
 </div>
-<div class="modal-footer" ng-show="data.attributes">
-    <ul class="lakeAttributes">
+<div class="modal-footer">
+    <ul class="lakeAttributes" ng-show="data.attributes">
         <li ng-repeat="attr in data.attributes" ng-bind-html="attr | trustHtml"></li>
     </ul>
+    <highchart id="weekTemp" config="weekTempChartConfig"></highchart>
 </div>

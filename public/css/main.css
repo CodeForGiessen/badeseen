@@ -37,16 +37,6 @@ h4 {
 .nav-tabs {
   margin-bottom: 10px; }
 
-/*
-	really hacky way to force the map to show. if all the parent elements don’t have a
-	explicit height the map wont show. FIXME
- */
-.container {
-  height: 80%; }
-
-.row > div, .ng-isolate-scope, .row, .tab-content, .tab-pane, .map {
-  height: 100%; }
-
 /**
  * List
  */
@@ -59,36 +49,61 @@ h4 {
 
 .lake-list-description {
   float: right;
-  color: #428BCA;
-}
+  color: #428BCA; }
 
 /**
  * Map
  */
 .angular-leaflet-map {
-  height: 80%;
   width: 100%; }
+
+/**
+ * Legend
+ */
+.legend {
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 6px 8px;
+  width: 180px;
+  line-height: 18px;
+  color: #555; }
+  .legend i {
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7; }
 
 /**
  * Modal
  */
 .modal-body article + article {
   margin-top: 1.5em; }
+.modal-body .lake-temp {
+  float: right;
+  height: 60px;
+  width: 60px;
+  display: inline;
+  font: 30px Arial, Helvetica, sans-serif;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 60px; }
+.modal-body .lake-temp-green {
+  background: rgba(0, 255, 0, 0.9); }
+.modal-body .lake-temp-orange {
+  background: rgba(255, 119, 0, 0.9); }
+.modal-body .lake-temp-red {
+  background: rgba(255, 0, 0, 0.9); }
+.modal-body .lake-text {
+  display: inline; }
 
-.lake-description {
-  margin-top: 10px;
-  text-align: justify;
-  hyphens: auto;
-}
-
-.lake-temp {
-  margin-top: 10px;
-}
-
-.lake-route {
-  margin-top: 10px;
-}
-
+.modal-footer .highcharts-legend-item {
+  display: none; }
 
 /**
  * Footer

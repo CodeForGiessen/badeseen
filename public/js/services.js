@@ -104,5 +104,54 @@ angular.module('badeseen.services', [])
                     return $http.get('public/data/badeseen.json');
                 }
             };
-    }]);
+    }])
+    .factory('temperature', [
+        function(){
+            var getCurrentLakeTemperature = function(lake){
+                for(var i in lake.measurements){
+                    var element = lake.measurements[i];
+                    if(element.water_itemperature){ //jshint ignore:line
+                        return element.water_itemperature; //jshint ignore:line
+                    }
+                }
+                return 0;
+            };
+
+            var getColorClass = function(temperature){
+                if(!temperature){
+                    return '';
+                }
+                if(temperature < 18 ) {
+                    return 'lake-temp-red'
+                } else if(temperature >=18 && temperature < 22) {
+                    return 'lake-temp-orange';
+                } else if(temperature >= 22){
+                    return 'lake-temp-green';
+                }else{
+                    return '';
+                }
+            };
+
+            var getMarkerIconPng = function(temperature){
+                if(!temperature){
+                    return 'public/img/marker_white.png';
+                }
+
+                if(temperature < 18 ) {
+                    return 'public/img/marker_red.png';
+                } else if(temperature >=18 && temperature < 22) {
+                    return  'public/img/marker_orange.png';
+                } else if(temperature >= 22){
+                    return 'public/img/marker_green.png';
+                }else{
+                    return 'public/img/marker_white.png';
+                }
+            };
+            return {
+                getColorClass: getColorClass,
+                getMarkerIconPng: getMarkerIconPng,
+                getCurrentLakeTemperature: getCurrentLakeTemperature
+            };
+        }
+    ]);
 

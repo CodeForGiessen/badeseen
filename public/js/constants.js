@@ -2,7 +2,7 @@
 
 
 angular.module('badeseen.constants', [])
-    .constant('APP_TITLE', 'Wasserqualität der Badeseen im Umkreis Gießens')
+    .constant('APP_TITLE', 'Wasserqualität der Badeseen im Umkreis von Gießen')
     .constant('LAB_INFO', {
         'name': 'Code for Gießen',
         'website': 'http://codefor.de/giessen/',

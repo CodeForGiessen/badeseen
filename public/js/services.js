@@ -24,10 +24,7 @@ angular.module('badeseen.services', [])
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(
                         function success(pos) {
-                            defer.resolve({
-                                'lat': pos.coords.latitude,
-                                'lng': pos.coords.longitude
-                            });
+                            defer.resolve(pos.coords);
                         }, function error() {
                             // client forbids (or is not able to) location usage
                             // so a fallback is used

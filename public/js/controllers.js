@@ -224,6 +224,11 @@ angular.module('badeseen.controllers', ['leaflet-directive', 'highcharts-ng'])
                     'resolve': {
                         'data': function() {
                             return null;
+                        },
+                        'userGeoLoc': function() {
+                            return {
+                               'hasGeolocation': false
+                            };
                         }
                     }
                 });
@@ -233,69 +238,71 @@ angular.module('badeseen.controllers', ['leaflet-directive', 'highcharts-ng'])
     .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'data', 'userGeoLoc','$timeout', 'temperature',
         function($scope, $modalInstance, data, userGeoLoc,$timeout,temperature) {
             $scope.data = data;
-            $scope.currentWaterTemperature = temperature.getCurrentLakeTemperature(data);
-            $scope.currentWaterTemperatureClass = temperature.getColorClass($scope.currentWaterTemperature);
+            if(data){
+                $scope.currentWaterTemperature = temperature.getCurrentLakeTemperature(data);
+                $scope.currentWaterTemperatureClass = temperature.getColorClass($scope.currentWaterTemperature);
 
-            var dayOfTheWeek = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
+                var dayOfTheWeek = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
 
-            $scope.lastSevenDays = [];
+                $scope.lastSevenDays = [];
 
-            var sortedWeek = [];
-            var today = new Date().getDay();
-            for(var i = 6; i>=0;i--){
-                sortedWeek.push(dayOfTheWeek[(i + today)%7]);
-                $scope.lastSevenDays.push((i % 2 === 0)? $scope.currentWaterTemperature + i:$scope.currentWaterTemperature - i);
-            }
+                var sortedWeek = [];
+                var today = new Date().getDay();
+                for(var i = 6; i>=0;i--){
+                    sortedWeek.push(dayOfTheWeek[(i + today)%7]);
+                    $scope.lastSevenDays.push((i % 2 === 0)? $scope.currentWaterTemperature + i:$scope.currentWaterTemperature - i);
+                }
 
-            $scope.weekTempChartConfig = {
-                'options': {
-                    'chart': {
-                        'type': 'areaspline'
-                    },
-                    'plotOptions': {
-                        'series': {
-                            'stacking': ''
+                $scope.weekTempChartConfig = {
+                    'options': {
+                        'chart': {
+                            'type': 'areaspline'
+                        },
+                        'plotOptions': {
+                            'series': {
+                                'stacking': ''
+                            }
                         }
-                    }
 
-                },
-                'yAxis': {
-                    title: {
-                        text: 'C°'
+                    },
+                    'yAxis': {
+                        title: {
+                            text: 'C°'
+                        }
+                    },
+                    'xAxis': {
+                        categories: sortedWeek
+                    },
+                    'series': [
+                    {
+                        'data': $scope.lastSevenDays,
+                        'id': 'series-0',
+                        'type': 'spline'
                     }
-                },
-                'xAxis': {
-                    categories: sortedWeek
-                },
-                'series': [
-                {
-                    'data': $scope.lastSevenDays,
-                    'id': 'series-0',
-                    'type': 'spline'
-                }
-                ],
-                'title': {
-                    'text': 'Temperatur der letzten 7 Tage'
-                },
-                'credits': {
-                    'enabled': true
-                },
-                'loading': false,
-                func: function(chart){
-                    //dirty FIXME
-                    $timeout(function(){
-                        chart.reflow();
-                    },1);
-                }
-            };
+                    ],
+                    'title': {
+                        'text': 'Temperatur der letzten 7 Tage'
+                    },
+                    'credits': {
+                        'enabled': true
+                    },
+                    'loading': false,
+                    func: function(chart){
+                        $timeout(function(){
+                            chart.reflow();
+                        },1);
+                    }
+                };
 
-            if(userGeoLoc.hasGeolocation) {
-                $scope.hasGeolocation = userGeoLoc.hasGeolocation;
-                $scope.userLat = userGeoLoc.userLat;
-                $scope.userLng = userGeoLoc.userLng;
+                if(userGeoLoc.hasGeolocation) {
+                    $scope.hasGeolocation = userGeoLoc.hasGeolocation;
+                    $scope.userLat = userGeoLoc.userLat;
+                    $scope.userLng = userGeoLoc.userLng;
+                } 
             }
+
             $scope.dismiss = function() {
                 $modalInstance.dismiss();
             };
-        }
+    }
     ]);
